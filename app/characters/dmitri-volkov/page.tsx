@@ -1,10 +1,10 @@
-import { VolkovMonograph } from "@/components/volkov-monograph"
+import { VolkovHub } from "@/components/volkov-hub"
 
 export const metadata = {
   title: "Dmitri Volkov | The Archives",
-  description: "The monograph of Dmitri Alexeyevich Volkov — scarred protector seeking quiet growth.",
+  description: "Character overview for Dmitri Alexeyevich Volkov — scarred protector seeking quiet growth.",
 }
 
 export default function VolkovPage() {
-  return <VolkovMonograph />
+  return <VolkovHub />
 }
