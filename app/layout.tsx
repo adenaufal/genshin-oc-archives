@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
+import { Cormorant_Garamond, DM_Sans, Cactus_Classical_Serif } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -18,10 +18,10 @@ const dmSans = DM_Sans({
   display: "swap",
 })
 
-const jetbrains = JetBrains_Mono({
+const cactusClassical = Cactus_Classical_Serif({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-jetbrains",
+  variable: "--font-cactus",
   display: "swap",
 })
 
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: light)", color: "#F5F0E8" },
+    { media: "(prefers-color-scheme: dark)", color: "#1A1714" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -48,10 +48,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} ${jetbrains.variable}`}
+      className={`${cormorant.variable} ${dmSans.variable} ${cactusClassical.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-canvas text-ink font-sans">
+      <body className="bg-canvas text-ink font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -47,7 +47,7 @@ export function VolkovHub() {
 
   return (
     <>
-      <TopNav label="Dmitri Volkov" refCode="SNEZ-088" accentColor="crimson" />
+      <TopNav label="Volkov" accentColor="crimson" />
 
       <main className="pb-24 pt-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-12">
@@ -57,15 +57,19 @@ export function VolkovHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* VSONA Profile */}
           <section aria-label="VSONA Profile">
             <div className="flex items-center gap-4">
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
-                VSONA Profile
-              </p>
-              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
+              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-crimson">
+                Nature & Disposition
+              </span>
+              <div className="h-px flex-1 bg-vapor" />
             </div>
 
             <p className="mt-6 font-serif text-body-lg italic leading-relaxed text-graphite">
@@ -75,8 +79,8 @@ export function VolkovHub() {
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               {/* Personality Sliders */}
               <div>
-                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                  Personality Sliders
+                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                  Temperament
                 </h3>
                 <div className="mt-4">
                   <PersonalitySliders sliders={volkovSliders} accent="crimson" />
@@ -85,8 +89,8 @@ export function VolkovHub() {
 
               {/* Stats */}
               <div>
-                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                  Combat Statistics
+                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                  Aptitudes
                 </h3>
                 <div className="mt-4">
                   <StatsBars stats={volkovStats} accent="crimson" />
@@ -95,33 +99,37 @@ export function VolkovHub() {
                 {/* Combat Data trigger */}
                 <button
                   onClick={() => setCombatOpen(true)}
-                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-crimson transition-colors hover:text-ink dark:hover:text-ink-secondary"
+                  className="mt-8 flex items-center gap-2 font-serif text-sm italic text-crimson transition-colors hover:text-ink"
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />
                     <path d="M7 4v3h3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                   </svg>
-                  Full Combat Data
+                  View Combat Capabilities
                 </button>
               </div>
             </div>
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* Deep Dive Parts */}
           <section aria-label="Character Bible">
             <div className="flex items-center gap-4">
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
-                Character Bible
-              </p>
-              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
+              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-crimson">
+                The Complete Record
+              </span>
+              <div className="h-px flex-1 bg-vapor" />
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <PartNavCard
-                number="01"
+                number="I"
                 title="Identity & Psychology"
                 description="Name analysis, psychological framework, MBTI/Enneagram, attachment style, and the paradox of his Dendro Vision."
                 href="/characters/dmitri-volkov/identity"
@@ -130,7 +138,7 @@ export function VolkovHub() {
                 readingTime="~45 min"
               />
               <PartNavCard
-                number="02"
+                number="II"
                 title="History & Relationships"
                 description="Complete backstory timeline, the desertion, key relationships, and the journey from Snezhnaya to Liyue."
                 href="/characters/dmitri-volkov/history"
@@ -139,7 +147,7 @@ export function VolkovHub() {
                 readingTime="~90 min"
               />
               <PartNavCard
-                number="03"
+                number="III"
                 title="Behavior & Narrative"
                 description="Behavioral encyclopedia, writing guide, daily routines, micro-expressions, and dialogue patterns."
                 href="/characters/dmitri-volkov/behavior"
@@ -151,7 +159,11 @@ export function VolkovHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* Cross-links */}
           <section aria-label="Related" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -159,16 +171,16 @@ export function VolkovHub() {
               href="/characters/lan-qingyu"
               className="group flex items-center gap-3 font-serif text-title text-graphite transition-colors hover:text-jade"
             >
-              <span>{"Lan Qingyu"}</span>
+              <span>Lan Qingyu</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
                 <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
             <Link
               href="/duo"
-              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+              className="group flex items-center gap-3 font-serif text-base italic text-graphite transition-colors hover:text-ink"
             >
-              <span>Duo Dynamic</span>
+              <span>The Duo</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
                 <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

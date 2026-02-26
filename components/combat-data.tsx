@@ -85,7 +85,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           {/* Header */}
           <div className="flex items-start justify-between">
             <div>
-              <p className={`font-mono text-caption uppercase tracking-widest-custom ${accentClass}`}>
+              <p className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
                 Appendix {data.appendix}
               </p>
               <h2 className="mt-1 font-sans text-2xl font-bold text-ink dark:text-ink">
@@ -118,7 +118,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
             <p className={`mt-1 font-serif text-2xl ${accentClass}`}>
               {data.vision.value}
             </p>
-            <p className="mt-1 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               ID: {data.vision.id}
             </p>
           </div>
@@ -136,7 +136,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
             <p className="mt-1 font-serif text-2xl text-ink dark:text-ink">
               {data.weapon.value}
             </p>
-            <p className="mt-1 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               TYPE: {data.weapon.type}
             </p>
           </div>
@@ -158,7 +158,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
             <p className="mt-1 font-serif text-2xl italic text-ink dark:text-ink">
               {data.constellation.value}
             </p>
-            <p className="mt-1 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               {data.constellation.note}
             </p>
           </div>
@@ -173,7 +173,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 className="object-cover grayscale"
                 sizes="400px"
               />
-              <span className="absolute bottom-2 right-2 font-mono text-[10px] uppercase tracking-widest-custom text-canvas/80 drop-shadow">
+              <span className="absolute bottom-2 right-2 font-display text-[9px] uppercase tracking-[0.15em] text-canvas/80 drop-shadow">
                 {data.imageCaption}
               </span>
             </div>
@@ -182,7 +182,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           {/* Org Data */}
           <div className="mt-8">
             <div className={`flex items-center gap-2 border-l-2 ${borderClass} pl-3`}>
-              <span className={`font-mono text-caption uppercase tracking-widest-custom ${accentClass}`}>
+              <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
                 Org. Data
               </span>
             </div>
@@ -224,7 +224,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           {/* Bio Metrics */}
           <div className="mt-8">
             <div className={`flex items-center gap-2 border-l-2 ${borderClass} pl-3`}>
-              <span className={`font-mono text-caption uppercase tracking-widest-custom ${accentClass}`}>
+              <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
                 Bio. Metrics
               </span>
             </div>
@@ -254,17 +254,17 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
 
           {/* System Status */}
           <div className="mt-12 border-t border-vapor dark:border-vapor/30 pt-4">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               System Status
             </p>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className={`h-2 w-2 rounded-full ${data.accent === "crimson" ? "bg-crimson" : "bg-jade"}`} />
-                <span className={`font-mono text-caption uppercase tracking-widest-custom ${accentClass}`}>
+                <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
                   Online
                 </span>
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
                 REF: {character === "volkov" ? "SNEZ-088" : "LIY-004"} // Classified
               </span>
             </div>

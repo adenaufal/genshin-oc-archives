@@ -11,7 +11,7 @@ export function QingyuScroll() {
 
   return (
     <>
-      <TopNav label="Qingyu \u2014 Identity" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Book I / Identity" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
         {/* Subtle scroll binding motif */}
@@ -34,7 +34,7 @@ export function QingyuScroll() {
           {/* Ref code */}
           <div className="mt-8 flex items-center justify-between">
             <div />
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
               REF: LIY-004
             </p>
           </div>
@@ -45,7 +45,7 @@ export function QingyuScroll() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 text-center font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 text-center font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Yuheng Consultant
           </p>
 
@@ -111,7 +111,7 @@ export function QingyuScroll() {
             <div className="hairline flex-1" />
             <button
               onClick={() => setCombatOpen(true)}
-              className="flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink"
+              className="flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-jade transition-colors hover:text-ink"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />

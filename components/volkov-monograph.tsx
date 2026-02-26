@@ -12,12 +12,12 @@ export function VolkovMonograph() {
 
   return (
     <>
-      <TopNav label="Volkov — Identity" refCode="SNEZ-088" accentColor="crimson" />
+      <TopNav label="Book I / Identity" accentColor="crimson" />
 
       <main className="pb-24 pt-32">
         <article className="mx-auto max-w-reading px-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+          <p className="font-display text-[10px] uppercase tracking-[0.25em] text-crimson">
             REF: SNEZ-088
           </p>
 
@@ -27,7 +27,7 @@ export function VolkovMonograph() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Iron Forest
           </p>
 
@@ -79,7 +79,7 @@ export function VolkovMonograph() {
             <div className="hairline flex-1 dark:bg-vapor/30" />
             <button
               onClick={() => setCombatOpen(true)}
-              className="flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-crimson transition-colors hover:text-ink dark:hover:text-ink-secondary"
+              className="flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.25em] text-crimson transition-colors hover:text-ink dark:hover:text-ink-secondary"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />

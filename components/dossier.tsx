@@ -10,14 +10,14 @@ const characters = [
     role: "The Iron Forest",
     href: "/characters/dmitri-volkov",
     accent: "crimson" as const,
-    image: "/images/volkov_portrait.webp",
+    image: "/images/volkov_portrait_transparent.webp",
   },
   {
     name: "Lan Qingyu",
     role: "The Mist Serpent",
     href: "/characters/lan-qingyu",
     accent: "jade" as const,
-    image: "/images/qinyu_portrait.webp",
+    image: "/images/qinyu_portrait_transparent.webp",
   },
 ]
 
@@ -25,25 +25,30 @@ export function Dossier() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="relative min-h-screen py-24 lg:py-section" aria-label="Archive selection">
-      {/* Background character image */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
+    <section className="relative min-h-screen py-24 lg:py-section" aria-label="Character selection">
+      {/* Background character image - Improved for wide screens */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         {characters.map((char, i) => (
           <div
             key={char.name}
-            className="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-700 ease-out"
+            className="absolute transition-all duration-700 ease-out"
             style={{
-              opacity: hoveredIndex === i ? 0.12 : 0,
-              width: "50vw",
-              height: "80vh",
+              opacity: hoveredIndex === i ? 1 : 0,
+              transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
+              top: '50%',
+              // Wide screen: position more centrally, not cut off on right
+              right: 'clamp(5%, 15vw, 20%)',
+              width: 'clamp(300px, 40vw, 600px)',
+              height: 'clamp(400px, 70vh, 800px)',
             }}
           >
             <Image
               src={char.image}
               alt=""
               fill
-              className="object-cover object-top"
-              sizes="50vw"
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) 50vw, 600px"
+              priority={i === 0}
               aria-hidden="true"
             />
           </div>
@@ -51,17 +56,12 @@ export function Dossier() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
-        {/* Vertical index label */}
-        <div className="absolute -left-2 top-1/2 -translate-y-1/2 hidden lg:block">
-          <span
-            className="block font-mono text-caption uppercase tracking-widest-custom text-graphite"
-            style={{
-              writingMode: "vertical-lr",
-              transform: "rotate(180deg)",
-            }}
-          >
-            Index 01
+        {/* Section header - Classical style */}
+        <div className="mb-16 flex items-center gap-6">
+          <span className="font-display text-[10px] uppercase tracking-[0.25em] text-graphite">
+            Volume I
           </span>
+          <div className="h-px flex-1 bg-vapor" />
         </div>
 
         {/* Character list */}
@@ -74,30 +74,41 @@ export function Dossier() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="hairline dark:bg-vapor/30" />
+              <div className="hairline" />
               <div className="py-12 lg:py-16">
-                <h2
-                  className={`font-serif text-hero transition-colors duration-500 ${
-                    hoveredIndex !== null && hoveredIndex !== i
-                      ? "opacity-30"
-                      : "opacity-100"
-                  } ${
-                    hoveredIndex === i
-                      ? char.accent === "crimson"
-                        ? "text-crimson"
-                        : "text-jade"
-                      : "text-ink dark:text-ink"
-                  }`}
-                >
-                  {char.name}
-                </h2>
+                <div className="flex items-baseline gap-6">
+                  <span 
+                    className={`font-display text-sm transition-all duration-500 ${
+                      hoveredIndex === i 
+                        ? char.accent === "crimson" ? "text-crimson" : "text-jade"
+                        : "text-vapor"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h2
+                    className={`font-serif text-hero transition-all duration-500 ${
+                      hoveredIndex !== null && hoveredIndex !== i
+                        ? "opacity-30"
+                        : "opacity-100"
+                    } ${
+                      hoveredIndex === i
+                        ? char.accent === "crimson"
+                          ? "text-crimson"
+                          : "text-jade"
+                        : "text-ink dark:text-ink"
+                    }`}
+                  >
+                    {char.name}
+                  </h2>
+                </div>
                 <p
-                  className={`mt-3 font-mono text-caption uppercase tracking-widest-custom transition-all duration-500 ${
+                  className={`mt-3 ml-12 font-serif text-lg italic transition-all duration-500 ${
                     hoveredIndex === i
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-4"
                   } ${
-                    char.accent === "crimson" ? "text-crimson" : "text-jade"
+                    char.accent === "crimson" ? "text-crimson/70" : "text-jade/70"
                   }`}
                 >
                   {char.role}
@@ -105,41 +116,48 @@ export function Dossier() {
               </div>
             </Link>
           ))}
-          <div className="hairline dark:bg-vapor/30" />
+          <div className="hairline" />
         </nav>
+
+        {/* Secondary navigation - Classical style */}
+        <div className="mt-16 flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
+          <div className="flex items-center gap-2">
+            <div className="h-px w-8 bg-vapor" />
+            <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+              Also Within
+            </span>
+            <div className="h-px w-8 bg-vapor" />
+          </div>
+          
+          <div className="flex items-center gap-8">
+            <Link
+              href="/duo"
+              className="group flex items-center gap-2 font-serif text-base italic text-graphite transition-colors hover:text-ink"
+            >
+              <span>The Duo</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <span className="text-vapor">·</span>
+            <Link
+              href="/gallery"
+              className="group flex items-center gap-2 font-serif text-base italic text-graphite transition-colors hover:text-ink"
+            >
+              <span>Gallery</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Secondary navigation */}
-      <div className="relative mx-auto mt-8 flex max-w-5xl items-center justify-center gap-8 px-6 lg:px-12">
-        <Link
-          href="/duo"
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
-        >
-          Duo Dynamic
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-            <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
-        <span className="text-vapor dark:text-vapor/30">|</span>
-        <Link
-          href="/gallery"
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
-        >
-          Gallery
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-            <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
-      </div>
-
-      {/* Bottom metadata */}
-      <div className="absolute inset-x-0 bottom-8 flex items-center justify-between px-6 lg:px-12">
-        <span className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
-          Fig. 02 — Archive Selection
-        </span>
-        <span className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
-          System Ready
-        </span>
+      {/* Bottom ornament */}
+      <div className="absolute inset-x-0 bottom-12 flex items-center justify-center gap-4">
+        <div className="h-px w-16 bg-vapor" />
+        <div className="w-2 h-2 rotate-45 border border-vapor" />
+        <div className="h-px w-16 bg-vapor" />
       </div>
     </section>
   )

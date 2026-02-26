@@ -21,28 +21,28 @@ function SliderRow({ data, accent, animate }: { data: SliderData; accent: "crims
   return (
     <div className="py-5">
       <div className="flex items-baseline justify-between">
-        <span className={`font-mono text-caption uppercase tracking-widest-custom ${textColor}`}>
+        <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${textColor}`}>
           {data.trait}
         </span>
-        <span className="font-mono text-[10px] text-graphite">
+        <span className="font-serif text-sm italic text-graphite">
           {data.value}%
         </span>
       </div>
       <div className="mt-3 flex items-center gap-4">
-        <span className="w-20 shrink-0 text-right font-sans text-xs text-graphite">
+        <span className="w-20 shrink-0 text-right font-serif text-sm italic text-graphite">
           {data.leftPole}
         </span>
-        <div className="relative h-[3px] flex-1 bg-vapor dark:bg-vapor/30">
+        <div className="relative h-[2px] flex-1 bg-vapor dark:bg-vapor/30">
           <div
             className={`absolute inset-y-0 left-0 ${fillColor} transition-all duration-1000 ease-out`}
             style={{ width: animate ? `${data.value}%` : "0%" }}
           />
           <div
-            className={`absolute top-1/2 -translate-y-1/2 h-2 w-2 rounded-full ${fillColor} transition-all duration-1000 ease-out`}
+            className={`absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 ${fillColor} transition-all duration-1000 ease-out`}
             style={{ left: animate ? `${data.value}%` : "0%" }}
           />
         </div>
-        <span className="w-20 shrink-0 font-sans text-xs text-graphite">
+        <span className="w-20 shrink-0 font-serif text-sm italic text-graphite">
           {data.rightPole}
         </span>
       </div>

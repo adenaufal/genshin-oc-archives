@@ -87,13 +87,13 @@ export function DuoDynamic() {
 
   return (
     <>
-      <TopNav label="Duo Dynamic" refCode="DUO-001" />
+      <TopNav label="The Duo" />
 
       <main className="pb-24 pt-32">
         {/* Hero section with both portraits */}
         <section className="mx-auto max-w-5xl px-6 lg:px-12">
           <div className="flex flex-col items-center">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Duo Dynamic
             </p>
             <h1 className="mt-4 text-center font-serif text-hero italic text-ink text-balance">
@@ -117,7 +117,7 @@ export function DuoDynamic() {
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/60 to-transparent p-6">
                   <span className="font-serif text-2xl text-canvas lg:text-3xl">Dmitri Volkov</span>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-widest-custom text-canvas/70">
+                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-canvas/70">
                     The Iron Forest
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export function DuoDynamic() {
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/60 to-transparent p-6">
                   <span className="font-serif text-2xl text-canvas lg:text-3xl">Lan Qingyu</span>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-widest-custom text-canvas/70">
+                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-canvas/70">
                     The Mist Serpent
                   </p>
                 </div>
@@ -168,7 +168,7 @@ export function DuoDynamic() {
         {/* Complementarity Table */}
         <section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Complementarity Analysis">
           <div className="flex items-center gap-4">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Complementarity Analysis
             </p>
             <div className="h-px flex-1 bg-vapor" />
@@ -227,11 +227,11 @@ export function DuoDynamic() {
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-4">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest-custom text-crimson">Dmitri</span>
+                    <span className="font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
                     <p className="mt-1 font-serif text-sm text-ink">{row.dmitri}</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest-custom text-jade">Qingyu</span>
+                    <span className="font-display text-[9px] uppercase tracking-[0.15em] text-jade">Qingyu</span>
                     <p className="mt-1 font-serif text-sm text-ink">{row.qingyu}</p>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export function DuoDynamic() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* What He Gives Her */}
             <div>
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
                 What He Gives Her
               </p>
               <div className="mt-6 flex flex-col gap-6">
@@ -277,7 +277,7 @@ export function DuoDynamic() {
 
             {/* What She Gives Him */}
             <div>
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
                 What She Gives Him
               </p>
               <div className="mt-6 flex flex-col gap-6">
@@ -309,7 +309,7 @@ export function DuoDynamic() {
         {/* Joint Combat Synergy */}
         <section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Combat Synergy">
           <div className="flex items-center gap-4">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Joint Combat Synergy
             </p>
             <div className="h-px flex-1 bg-vapor" />
@@ -359,7 +359,7 @@ export function DuoDynamic() {
             <p className="font-serif text-lg italic leading-relaxed text-graphite">
               {"\u201CFighting one of them is dangerous. Fighting both of them is architectural \u2014 you\u2019re not engaging combatants, you\u2019re entering a structure they\u2019ve built around you, and by the time you realize the walls are closing in, the thorns have already found your throat.\u201D"}
             </p>
-            <cite className="mt-4 block font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+            <cite className="mt-4 block font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
               {"Anonymous Treasure Hoarder captain, debriefing after a failed ambush"}
             </cite>
           </blockquote>
@@ -368,7 +368,7 @@ export function DuoDynamic() {
         {/* Dialogue Sample */}
         <section className="mx-auto mt-24 max-w-reading px-6" aria-label="Dialogue Sample">
           <div className="flex items-center gap-4">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Dialogue Sample
             </p>
             <div className="h-px flex-1 bg-vapor" />
@@ -390,7 +390,7 @@ export function DuoDynamic() {
             <div className="mt-6 flex flex-col gap-4">
               {(expandedDialogue ? dialogueSample.lines : dialogueSample.lines.slice(0, 6)).map((line, i) => (
                 <div key={i} className="flex gap-4">
-                  <span className={`w-20 shrink-0 text-right font-mono text-[10px] uppercase tracking-widest-custom ${
+                  <span className={`w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] ${
                     line.speaker === "DMITRI" ? "text-crimson" : "text-jade"
                   }`}>
                     {line.speaker}
@@ -412,7 +412,7 @@ export function DuoDynamic() {
             {!expandedDialogue && (
               <button
                 onClick={() => setExpandedDialogue(true)}
-                className="mt-6 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+                className="mt-6 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink"
               >
                 Continue reading...
               </button>
@@ -460,13 +460,13 @@ export function DuoDynamic() {
 
         {/* Bottom navigation */}
         <nav className="mx-auto mt-12 flex max-w-reading items-center justify-between px-6" aria-label="Page navigation">
-          <Link href="/characters/dmitri-volkov" className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-crimson transition-colors hover:text-ink">
+          <Link href="/characters/dmitri-volkov" className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-crimson transition-colors hover:text-ink">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:-translate-x-1" aria-hidden="true">
               <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Volkov
           </Link>
-          <Link href="/characters/lan-qingyu" className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink">
+          <Link href="/characters/lan-qingyu" className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-jade transition-colors hover:text-ink">
             Qingyu
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
               <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

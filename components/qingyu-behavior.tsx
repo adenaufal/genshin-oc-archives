@@ -11,7 +11,7 @@ export function QingyuBehavior() {
 
   return (
     <>
-      <TopNav label="Qingyu — Behavior" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Book III / Behavior" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
         {/* Scroll binding motif */}
@@ -23,7 +23,7 @@ export function QingyuBehavior() {
 
         <article className="mx-auto max-w-reading px-6 lg:pl-12 lg:pr-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
+          <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
             REF: LIY-004 // Part 3
           </p>
 
@@ -33,7 +33,7 @@ export function QingyuBehavior() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Performance Manual
           </p>
 

@@ -49,16 +49,9 @@ export function QingyuHub() {
 
   return (
     <>
-      <TopNav label="Lan Qingyu" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Qingyu" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
-        {/* Scroll binding motif */}
-        <div
-          className="pointer-events-none absolute bottom-0 left-4 top-0 hidden w-px lg:block"
-          style={{ backgroundColor: "rgba(42, 75, 66, 0.08)" }}
-          aria-hidden="true"
-        />
-
         <div className="mx-auto max-w-4xl px-6 lg:px-12">
           {/* Quick Reference Card */}
           <section aria-label="Quick Reference">
@@ -66,15 +59,19 @@ export function QingyuHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* VSONA Profile */}
           <section aria-label="VSONA Profile">
             <div className="flex items-center gap-4">
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
-                VSONA Profile
-              </p>
-              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
+              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-jade">
+                Nature & Disposition
+              </span>
+              <div className="h-px flex-1 bg-vapor" />
             </div>
 
             <p className="mt-6 font-serif text-body-lg italic leading-relaxed text-graphite">
@@ -83,8 +80,8 @@ export function QingyuHub() {
 
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
-                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                  Personality Sliders
+                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                  Temperament
                 </h3>
                 <div className="mt-4">
                   <PersonalitySliders sliders={qingyuSliders} accent="jade" />
@@ -92,8 +89,8 @@ export function QingyuHub() {
               </div>
 
               <div>
-                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                  Operative Statistics
+                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                  Aptitudes
                 </h3>
                 <div className="mt-4">
                   <StatsBars stats={qingyuStats} accent="jade" />
@@ -101,32 +98,37 @@ export function QingyuHub() {
 
                 <button
                   onClick={() => setCombatOpen(true)}
-                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink dark:hover:text-ink-secondary"
+                  className="mt-8 flex items-center gap-2 font-serif text-sm italic text-jade transition-colors hover:text-ink"
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />
                     <path d="M7 4v3h3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                   </svg>
-                  Full Combat Data
+                  View Combat Capabilities
                 </button>
               </div>
             </div>
           </section>
 
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          {/* Divider */}
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* Deep Dive Parts */}
           <section aria-label="Character Bible">
             <div className="flex items-center gap-4">
-              <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
-                Character Bible
-              </p>
-              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
+              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-jade">
+                The Complete Record
+              </span>
+              <div className="h-px flex-1 bg-vapor" />
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <PartNavCard
-                number="01"
+                number="I"
                 title="Identity & Psychology"
                 description="Name analysis, five persona layers, MBTI/Enneagram, the architecture of fabricated identity, and her Dendro Vision."
                 href="/characters/lan-qingyu/identity"
@@ -135,7 +137,7 @@ export function QingyuHub() {
                 readingTime="~40 min"
               />
               <PartNavCard
-                number="02"
+                number="II"
                 title="History & Relationships"
                 description="From dock worker's daughter to intelligence broker, key alliances, the trust asymmetry, and the cost of thirty years of deception."
                 href="/characters/lan-qingyu/history"
@@ -144,7 +146,7 @@ export function QingyuHub() {
                 readingTime="~38 min"
               />
               <PartNavCard
-                number="03"
+                number="III"
                 title="Behavior & Narrative"
                 description="Behavioral encyclopedia, writing guide, the five masks, social navigation patterns, and vulnerability triggers."
                 href="/characters/lan-qingyu/behavior"
@@ -155,7 +157,12 @@ export function QingyuHub() {
             </div>
           </section>
 
-          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
+          {/* Divider */}
+          <div className="my-16 flex items-center justify-center gap-4">
+            <div className="h-px w-24 bg-vapor" />
+            <div className="w-2 h-2 rotate-45 border border-vapor" />
+            <div className="h-px w-24 bg-vapor" />
+          </div>
 
           {/* Cross-links */}
           <section aria-label="Related" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -163,16 +170,16 @@ export function QingyuHub() {
               href="/characters/dmitri-volkov"
               className="group flex items-center gap-3 font-serif text-title text-graphite transition-colors hover:text-crimson"
             >
-              <span>{"Dmitri Volkov"}</span>
+              <span>Dmitri Volkov</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
                 <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
             <Link
               href="/duo"
-              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+              className="group flex items-center gap-3 font-serif text-base italic text-graphite transition-colors hover:text-ink"
             >
-              <span>Duo Dynamic</span>
+              <span>The Duo</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
                 <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

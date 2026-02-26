@@ -20,9 +20,9 @@ const config: Config = {
         jade: "var(--color-jade)",
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "serif"],
-        sans: ["var(--font-dm-sans)", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "monospace"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-cactus)", "var(--font-cormorant)", "Georgia", "serif"],
       },
       fontSize: {
         "hero": ["clamp(3.5rem, 8vw, 6rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],

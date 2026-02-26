@@ -12,12 +12,12 @@ export function VolkovHistory() {
 
   return (
     <>
-      <TopNav label="Volkov — History" refCode="SNEZ-088" accentColor="crimson" />
+      <TopNav label="Book II / History" accentColor="crimson" />
 
       <main className="pb-24 pt-32">
         <article className="mx-auto max-w-reading px-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+          <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
             REF: SNEZ-088 // Part 2
           </p>
 
@@ -27,7 +27,7 @@ export function VolkovHistory() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Journey from Soldier to Deserter
           </p>
 
@@ -162,27 +162,27 @@ export function VolkovHistory() {
                 </thead>
                 <tbody>
                   <tr className="border-b border-vapor dark:border-vapor/30">
-                    <td className="px-5 py-3 font-mono text-sm text-crimson">1</td>
+                    <td className="px-5 py-3 font-serif text-sm text-crimson">1</td>
                     <td className="px-5 py-3 font-serif text-sm text-ink dark:text-ink">Protection of innocents</td>
                     <td className="px-5 py-3 font-sans text-sm text-ink dark:text-ink">Absolute</td>
                   </tr>
                   <tr className="border-b border-vapor dark:border-vapor/30 bg-vapor/20 dark:bg-vapor/10">
-                    <td className="px-5 py-3 font-mono text-sm text-crimson">2</td>
+                    <td className="px-5 py-3 font-serif text-sm text-crimson">2</td>
                     <td className="px-5 py-3 font-serif text-sm text-ink dark:text-ink">Personal honor/integrity</td>
                     <td className="px-5 py-3 font-sans text-sm text-ink dark:text-ink">Very strong</td>
                   </tr>
                   <tr className="border-b border-vapor dark:border-vapor/30">
-                    <td className="px-5 py-3 font-mono text-sm text-crimson">3</td>
+                    <td className="px-5 py-3 font-serif text-sm text-crimson">3</td>
                     <td className="px-5 py-3 font-serif text-sm text-ink dark:text-ink">Loyalty to trusted individuals</td>
                     <td className="px-5 py-3 font-sans text-sm text-ink dark:text-ink">Strong</td>
                   </tr>
                   <tr className="border-b border-vapor dark:border-vapor/30 bg-vapor/20 dark:bg-vapor/10">
-                    <td className="px-5 py-3 font-mono text-sm text-crimson">4</td>
+                    <td className="px-5 py-3 font-serif text-sm text-crimson">4</td>
                     <td className="px-5 py-3 font-serif text-sm text-ink dark:text-ink">Freedom/independence</td>
                     <td className="px-5 py-3 font-sans text-sm text-ink dark:text-ink">Moderate</td>
                   </tr>
                   <tr>
-                    <td className="px-5 py-3 font-mono text-sm text-crimson">5</td>
+                    <td className="px-5 py-3 font-serif text-sm text-crimson">5</td>
                     <td className="px-5 py-3 font-serif text-sm text-ink dark:text-ink">Self-preservation</td>
                     <td className="px-5 py-3 font-sans text-sm text-ink dark:text-ink">Low</td>
                   </tr>
@@ -207,7 +207,7 @@ export function VolkovHistory() {
             {/* Sergeant Yuri Petrov */}
             <div className="mt-8 border-l-2 border-crimson/20 dark:border-crimson/30 pl-6">
               <h3 className="font-serif text-xl text-ink dark:text-ink">Sergeant Yuri Petrov</h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <p className="mt-2 font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
                 Mentor, Deceased
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
@@ -218,7 +218,7 @@ export function VolkovHistory() {
             {/* Lan Qingyu */}
             <div className="mt-8 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
               <h3 className="font-serif text-xl text-ink dark:text-ink">Lan Qingyu</h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <p className="mt-2 font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
                 Professional Partner
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">

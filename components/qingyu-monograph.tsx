@@ -12,7 +12,7 @@ export function QingyuMonograph() {
 
   return (
     <>
-      <TopNav label="Qingyu — Identity" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Book I / Identity" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
         {/* Scroll binding motif */}
@@ -24,7 +24,7 @@ export function QingyuMonograph() {
 
         <article className="mx-auto max-w-reading px-6 lg:pl-12 lg:pr-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
+          <p className="font-display text-[10px] uppercase tracking-[0.25em] text-jade">
             REF: LIY-004
           </p>
 
@@ -34,7 +34,7 @@ export function QingyuMonograph() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Mist Serpent
           </p>
 
@@ -89,7 +89,7 @@ export function QingyuMonograph() {
             <div className="hairline flex-1 dark:bg-vapor/30" />
             <button
               onClick={() => setCombatOpen(true)}
-              className="flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink dark:hover:text-ink-secondary"
+              className="flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.25em] text-jade transition-colors hover:text-ink dark:hover:text-ink-secondary"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />

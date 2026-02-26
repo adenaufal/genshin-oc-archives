@@ -36,12 +36,12 @@ export function ImagePlate({
       </div>
       <figcaption className="mt-3 flex items-center justify-between border-t border-vapor dark:border-vapor/30 pt-3">
         {archiveId && (
-          <span className="font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+          <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             {archiveId}
           </span>
         )}
         {caption && (
-          <span className="font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+          <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             {caption}
           </span>
         )}

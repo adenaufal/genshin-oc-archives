@@ -169,10 +169,10 @@ function Lightbox({
           priority
         />
         <div className="mt-4 flex items-center justify-between">
-          <p className="font-mono text-[10px] uppercase tracking-widest-custom text-canvas/60">
+          <p className="font-display text-[9px] uppercase tracking-[0.15em] text-canvas/60">
             {item.caption}
           </p>
-          <p className="font-mono text-[10px] uppercase tracking-widest-custom text-canvas/40">
+          <p className="font-display text-[9px] uppercase tracking-[0.15em] text-canvas/40">
             {index + 1} / {total}
           </p>
         </div>
@@ -203,13 +203,13 @@ export function Gallery() {
 
   return (
     <>
-      <TopNav label="Gallery" refCode="GAL-001" />
+      <TopNav label="Gallery" />
 
       <main className="pb-24 pt-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-12">
           {/* Header */}
           <div className="flex flex-col items-center">
-            <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Visual Archive
             </p>
             <h1 className="mt-4 font-serif text-hero italic text-ink dark:text-ink">
@@ -226,7 +226,7 @@ export function Gallery() {
               <button
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
-                className={`font-mono text-caption uppercase tracking-widest-custom transition-colors ${
+                className={`font-display text-[10px] uppercase tracking-[0.2em] transition-colors ${
                   activeFilter === f.key ? "text-ink dark:text-ink" : "text-graphite hover:text-ink dark:hover:text-ink-secondary"
                 }`}
               >
@@ -239,7 +239,7 @@ export function Gallery() {
           </div>
 
           {/* Count */}
-          <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+          <p className="mt-6 text-center font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
             {filtered.length} {filtered.length === 1 ? "plate" : "plates"}
           </p>
 
@@ -263,10 +263,10 @@ export function Gallery() {
                   />
                 </div>
                 <div className="flex items-center justify-between border-t border-vapor dark:border-vapor/30 p-3">
-                  <span className="font-mono text-[9px] uppercase tracking-widest-custom text-graphite">
+                  <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
                     {item.caption.split(".")[0]}.
                   </span>
-                  <span className={`font-mono text-[9px] uppercase tracking-widest-custom ${
+                  <span className={`font-display text-[9px] uppercase tracking-[0.15em] ${
                     item.character === "volkov" ? "text-crimson" : "text-jade"
                   }`}>
                     {item.type}

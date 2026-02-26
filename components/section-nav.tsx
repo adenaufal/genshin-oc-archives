@@ -19,7 +19,7 @@ export function SectionNav({ prev, next }: SectionNavProps) {
       {prev ? (
         <Link
           href={prev.href}
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+          className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
         >
           <svg
             width="16"
@@ -46,7 +46,7 @@ export function SectionNav({ prev, next }: SectionNavProps) {
       {next ? (
         <Link
           href={next.href}
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+          className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
         >
           {next.label}
           <svg

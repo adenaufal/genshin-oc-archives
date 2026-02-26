@@ -11,7 +11,7 @@ export function QingyuHistory() {
 
   return (
     <>
-      <TopNav label="Qingyu — History" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Book II / History" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
         {/* Scroll binding motif */}
@@ -23,7 +23,7 @@ export function QingyuHistory() {
 
         <article className="mx-auto max-w-reading px-6 lg:pl-12 lg:pr-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
+          <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
             REF: LIY-004 // Part 2
           </p>
 
@@ -33,7 +33,7 @@ export function QingyuHistory() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             From Docks to Heights
           </p>
 
@@ -154,7 +154,7 @@ export function QingyuHistory() {
             {/* Mother */}
             <div className="mt-8 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
               <h3 className="font-serif text-xl text-ink dark:text-ink">Her Mother</h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <p className="mt-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
                 Deceased
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
@@ -165,7 +165,7 @@ export function QingyuHistory() {
             {/* Father */}
             <div className="mt-8 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
               <h3 className="font-serif text-xl text-ink dark:text-ink">Her Father</h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <p className="mt-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
                 Deceased — Dock Worker
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
@@ -176,7 +176,7 @@ export function QingyuHistory() {
             {/* Dmitri Volkov */}
             <div className="mt-8 border-l-2 border-crimson/20 dark:border-crimson/30 pl-6">
               <h3 className="font-serif text-xl text-ink dark:text-ink">Dmitri Volkov</h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
+              <p className="mt-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
                 Professional Partner
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">

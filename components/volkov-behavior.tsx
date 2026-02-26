@@ -12,12 +12,12 @@ export function VolkovBehavior() {
 
   return (
     <>
-      <TopNav label="Volkov — Behavior" refCode="SNEZ-088" accentColor="crimson" />
+      <TopNav label="Book III / Behavior" accentColor="crimson" />
 
       <main className="pb-24 pt-32">
         <article className="mx-auto max-w-reading px-6">
           {/* Ref code */}
-          <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+          <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
             REF: SNEZ-088 // Part 3
           </p>
 
@@ -27,7 +27,7 @@ export function VolkovBehavior() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-mono text-caption uppercase tracking-widest-custom text-graphite">
+          <p className="mt-4 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
             The Field Manual
           </p>
 
@@ -253,7 +253,7 @@ export function VolkovBehavior() {
             {/* Stress levels */}
             <div className="mt-8 space-y-6">
               <div className="border border-vapor dark:border-vapor/30 p-5">
-                <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+                <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
                   High Stress
                 </p>
                 <p className="mt-3 font-serif text-body leading-relaxed text-ink dark:text-ink">
@@ -262,7 +262,7 @@ export function VolkovBehavior() {
               </div>
 
               <div className="border border-vapor dark:border-vapor/30 p-5">
-                <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
+                <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
                   Post-Stress Recovery
                 </p>
                 <p className="mt-3 font-serif text-body leading-relaxed text-ink dark:text-ink">
