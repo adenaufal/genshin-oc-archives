@@ -6,11 +6,11 @@
   /* Light mode - Warm Parchment */
   --color-canvas: #F5F0E8;
   --color-canvas-secondary: #FAF8F3;
-  --color-ink: #2C2416;
-  --color-ink-secondary: #3D3220;
-  --color-graphite: #6B5D4D;
-  --color-graphite-secondary: #8B7D6B;
-  --color-vapor: #D4C9B8;
+  --color-ink: #1A1612;
+  --color-ink-secondary: #2C2416;
+  --color-graphite: #5A4D3F;
+  --color-graphite-secondary: #7A6B5A;
+  --color-vapor: #C4B8A8;
   --color-crimson: #8B1E1E;
   --color-jade: #2A4B42;
   --color-gold: #B8956B;
@@ -24,14 +24,14 @@
   /* Dark mode - Deep Amber */
   --color-canvas: #1A1714;
   --color-canvas-secondary: #242019;
-  --color-ink: #E8DFD0;
-  --color-ink-secondary: #D4C9B8;
-  --color-graphite: #9A8B7A;
-  --color-graphite-secondary: #7A6B5A;
-  --color-vapor: #3D3530;
-  --color-crimson: #B84545;
-  --color-jade: #4A7B6E;
-  --color-gold: #C4A574;
+  --color-ink: #F0E8DC;
+  --color-ink-secondary: #E0D4C0;
+  --color-graphite: #B8A898;
+  --color-graphite-secondary: #9A8B7A;
+  --color-vapor: #4A4038;
+  --color-crimson: #C44B4B;
+  --color-jade: #5A8B7E;
+  --color-gold: #D4B080;
   
   /* Decorative colors */
   --color-parchment-dark: #2C2416;
@@ -54,6 +54,7 @@ body {
   background-color: var(--color-canvas);
   color: var(--color-ink);
   transition: background-color 0.4s ease, color 0.4s ease;
+  font-weight: 450;
 }
 
 ::selection {
@@ -69,12 +70,12 @@ body {
 /* Drop cap styling - Classical */
 .drop-cap::first-letter {
   float: left;
-  font-family: var(--font-cactus), var(--font-cormorant), serif;
+  font-family: var(--font-cactus), var(--font-cormorant), Georgia, serif;
   font-size: 4.2rem;
   line-height: 0.85;
   padding-right: 0.6rem;
   padding-top: 0.2rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .drop-cap-crimson::first-letter {
@@ -213,17 +214,18 @@ body {
 
 /* Label styling - Classical serif caps */
 .label-archival {
-  font-family: var(--font-cactus), var(--font-cormorant), serif;
-  font-size: 0.7rem;
+  font-family: var(--font-cactus), var(--font-cormorant), Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--color-graphite);
 }
 
 .label-section {
-  font-family: var(--font-cormorant), serif;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   font-style: italic;
   letter-spacing: 0.1em;
   color: var(--color-graphite);

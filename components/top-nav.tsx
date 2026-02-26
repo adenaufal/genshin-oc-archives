@@ -64,7 +64,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-2 font-serif text-sm italic text-graphite transition-colors hover:text-ink"
+            className="flex items-center gap-2 font-serif text-sm font-medium italic text-graphite transition-colors hover:text-ink"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M8 2L4 7l4 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -74,7 +74,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
           {label && (
             <>
               <span className="text-vapor">·</span>
-              <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+              <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
                 {label}
               </span>
             </>
@@ -85,7 +85,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
           <ThemeToggle />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink"
+            className="flex items-center gap-2 font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             {menuOpen ? "Close" : "Contents"}
@@ -114,7 +114,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="font-serif text-display italic text-ink transition-colors hover:text-graphite"
+              className="font-serif text-display font-medium italic text-ink transition-colors hover:text-graphite"
             >
               The Archives
             </Link>
@@ -129,7 +129,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
             <div className="mt-16 grid w-full max-w-2xl gap-12 sm:grid-cols-3">
               {navSections.map((section) => (
                 <div key={section.heading} className="text-center">
-                  <p className="font-display text-[10px] uppercase tracking-[0.25em] text-graphite mb-4">
+                  <p className="font-display text-[11px] font-medium uppercase tracking-[0.25em] text-graphite mb-4">
                     {section.heading}
                   </p>
                   <nav className="flex flex-col gap-3">
@@ -138,7 +138,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
                         key={link.href}
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`font-serif text-xl transition-colors ${
+                        className={`font-serif text-xl font-medium transition-colors ${
                           "accent" in link
                             ? link.accent === "crimson"
                               ? "text-ink hover:text-crimson"
@@ -164,7 +164,7 @@ export function TopNav({ label, accentColor }: TopNavProps) {
             {/* Theme toggle */}
             <div className="mt-10 flex items-center gap-3">
               <ThemeToggle />
-              <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+              <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
                 Light
               </span>
             </div>

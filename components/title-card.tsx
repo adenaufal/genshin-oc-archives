@@ -25,7 +25,7 @@ export function TitleCard() {
       <div className="flex flex-col items-center gap-8 text-center">
         {/* Subtitle - Classical serif */}
         <p
-          className={`font-display text-[11px] uppercase tracking-[0.3em] text-graphite transition-all duration-1000 ease-out ${
+          className={`font-display text-[12px] font-medium uppercase tracking-[0.3em] text-graphite transition-all duration-1000 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -34,7 +34,7 @@ export function TitleCard() {
 
         {/* Main title */}
         <h1
-          className={`font-serif text-hero italic text-ink dark:text-ink transition-all duration-1000 delay-200 ease-out ${
+          className={`font-serif text-hero font-medium italic text-ink dark:text-ink transition-all duration-1000 delay-200 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -54,7 +54,7 @@ export function TitleCard() {
 
         {/* Character names */}
         <p
-          className={`font-serif text-lg italic text-crimson transition-all duration-1000 delay-700 ease-out ${
+          className={`font-serif text-xl font-medium italic text-crimson transition-all duration-1000 delay-700 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -68,7 +68,7 @@ export function TitleCard() {
           visible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+        <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
           Enter
         </span>
         <svg

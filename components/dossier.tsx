@@ -10,14 +10,14 @@ const characters = [
     role: "The Iron Forest",
     href: "/characters/dmitri-volkov",
     accent: "crimson" as const,
-    image: "/images/volkov_portrait_transparent.webp",
+    image: "/images/volkov_portrait.webp",
   },
   {
     name: "Lan Qingyu",
     role: "The Mist Serpent",
     href: "/characters/lan-qingyu",
     accent: "jade" as const,
-    image: "/images/qinyu_portrait_transparent.webp",
+    image: "/images/qinyu_portrait.webp",
   },
 ]
 
@@ -26,28 +26,27 @@ export function Dossier() {
 
   return (
     <section className="relative min-h-screen py-24 lg:py-section" aria-label="Character selection">
-      {/* Background character image - Improved for wide screens */}
+      {/* Background character image - Subtle watermark style */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         {characters.map((char, i) => (
           <div
             key={char.name}
             className="absolute transition-all duration-700 ease-out"
             style={{
-              opacity: hoveredIndex === i ? 1 : 0,
-              transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
+              opacity: hoveredIndex === i ? 0.1 : 0,
               top: '50%',
-              // Wide screen: position more centrally, not cut off on right
-              right: 'clamp(5%, 15vw, 20%)',
-              width: 'clamp(300px, 40vw, 600px)',
-              height: 'clamp(400px, 70vh, 800px)',
+              right: 'clamp(5%, 10vw, 15%)',
+              width: 'clamp(280px, 35vw, 500px)',
+              height: 'clamp(380px, 60vh, 700px)',
+              transform: 'translateY(-50%)',
             }}
           >
             <Image
               src={char.image}
               alt=""
               fill
-              className="object-contain object-center"
-              sizes="(max-width: 1024px) 50vw, 600px"
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 40vw, 500px"
               priority={i === 0}
               aria-hidden="true"
             />
@@ -58,7 +57,7 @@ export function Dossier() {
       <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
         {/* Section header - Classical style */}
         <div className="mb-16 flex items-center gap-6">
-          <span className="font-display text-[10px] uppercase tracking-[0.25em] text-graphite">
+          <span className="font-display text-[11px] font-medium uppercase tracking-[0.25em] text-graphite">
             Volume I
           </span>
           <div className="h-px flex-1 bg-vapor" />
@@ -78,16 +77,16 @@ export function Dossier() {
               <div className="py-12 lg:py-16">
                 <div className="flex items-baseline gap-6">
                   <span 
-                    className={`font-display text-sm transition-all duration-500 ${
+                    className={`font-display text-sm font-medium transition-all duration-500 ${
                       hoveredIndex === i 
                         ? char.accent === "crimson" ? "text-crimson" : "text-jade"
-                        : "text-vapor"
+                        : "text-graphite-secondary"
                     }`}
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h2
-                    className={`font-serif text-hero transition-all duration-500 ${
+                    className={`font-serif text-hero font-medium transition-all duration-500 ${
                       hoveredIndex !== null && hoveredIndex !== i
                         ? "opacity-30"
                         : "opacity-100"
@@ -103,12 +102,12 @@ export function Dossier() {
                   </h2>
                 </div>
                 <p
-                  className={`mt-3 ml-12 font-serif text-lg italic transition-all duration-500 ${
+                  className={`mt-3 ml-12 font-serif text-lg font-medium italic transition-all duration-500 ${
                     hoveredIndex === i
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-4"
                   } ${
-                    char.accent === "crimson" ? "text-crimson/70" : "text-jade/70"
+                    char.accent === "crimson" ? "text-crimson" : "text-jade"
                   }`}
                 >
                   {char.role}
@@ -123,7 +122,7 @@ export function Dossier() {
         <div className="mt-16 flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
           <div className="flex items-center gap-2">
             <div className="h-px w-8 bg-vapor" />
-            <span className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+            <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
               Also Within
             </span>
             <div className="h-px w-8 bg-vapor" />
@@ -132,7 +131,7 @@ export function Dossier() {
           <div className="flex items-center gap-8">
             <Link
               href="/duo"
-              className="group flex items-center gap-2 font-serif text-base italic text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-2 font-serif text-base font-medium italic text-graphite transition-colors hover:text-ink"
             >
               <span>The Duo</span>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
@@ -142,7 +141,7 @@ export function Dossier() {
             <span className="text-vapor">·</span>
             <Link
               href="/gallery"
-              className="group flex items-center gap-2 font-serif text-base italic text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-2 font-serif text-base font-medium italic text-graphite transition-colors hover:text-ink"
             >
               <span>Gallery</span>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
