@@ -10,14 +10,14 @@ const characters = [
     role: "The Iron Forest",
     href: "/characters/dmitri-volkov",
     accent: "crimson" as const,
-    image: "/images/volkov_portrait.webp",
+    image: "/images/volkov_portrait_transparent.webp",
   },
   {
     name: "Lan Qingyu",
     role: "The Mist Serpent",
     href: "/characters/lan-qingyu",
     accent: "jade" as const,
-    image: "/images/qinyu_portrait.webp",
+    image: "/images/qinyu_portrait_transparent.webp",
   },
 ]
 
@@ -26,7 +26,7 @@ export function Dossier() {
 
   return (
     <section className="relative min-h-screen py-24 lg:py-section" aria-label="Character selection">
-      {/* Background character image - Subtle watermark style */}
+      {/* Background character image - Dramatic large transparent portraits */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         {characters.map((char, i) => (
           <div
@@ -34,19 +34,19 @@ export function Dossier() {
             className="absolute transition-all duration-700 ease-out"
             style={{
               opacity: hoveredIndex === i ? 0.1 : 0,
+              transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
               top: '50%',
-              right: 'clamp(5%, 10vw, 15%)',
-              width: 'clamp(280px, 35vw, 500px)',
-              height: 'clamp(380px, 60vh, 700px)',
-              transform: 'translateY(-50%)',
+              right: 'clamp(2%, 8vw, 12%)',
+              width: 'clamp(350px, 45vw, 700px)',
+              height: 'clamp(500px, 80vh, 900px)',
             }}
           >
             <Image
               src={char.image}
               alt=""
               fill
-              className="object-cover object-top"
-              sizes="(max-width: 1024px) 40vw, 500px"
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) 50vw, 700px"
               priority={i === 0}
               aria-hidden="true"
             />
