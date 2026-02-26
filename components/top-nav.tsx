@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { ThemeToggle } from "./theme-toggle"
 
 interface TopNavProps {
@@ -36,6 +37,7 @@ const navSections = [
 export function TopNav({ label, accentColor }: TopNavProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const reduce = useReducedMotion()
 
   useEffect(() => {
     function onScroll() {
@@ -94,83 +96,114 @@ export function TopNav({ label, accentColor }: TopNavProps) {
       </header>
 
       {/* Full-screen classical menu overlay */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 overflow-y-auto bg-canvas dark:bg-canvas"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Navigation menu"
-        >
-          <div className="flex min-h-screen flex-col items-center justify-center px-6 py-24">
-            {/* Decorative frame */}
-            <div className="absolute inset-8 pointer-events-none">
-              <div className="corner-flourish corner-flourish-tl" />
-              <div className="corner-flourish corner-flourish-tr" />
-              <div className="corner-flourish corner-flourish-bl" />
-              <div className="corner-flourish corner-flourish-br" />
-            </div>
-
-            {/* Masthead */}
-            <Link
-              href="/"
-              onClick={() => setMenuOpen(false)}
-              className="font-serif text-display font-medium italic text-ink transition-colors hover:text-graphite"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="menu-overlay"
+            className="fixed inset-0 z-40 overflow-y-auto bg-canvas dark:bg-canvas"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0 : 0.4 }}
+          >
+            <motion.div
+              className="flex min-h-screen flex-col items-center justify-center px-6 py-24"
+              initial="hidden"
+              animate="visible"
+              transition={{ staggerChildren: reduce ? 0 : 0.08, delayChildren: reduce ? 0 : 0.15 }}
             >
-              The Archives
-            </Link>
-            
-            <div className="flex items-center gap-3 mt-3">
-              <div className="h-px w-8 bg-vapor" />
-              <div className="w-1 h-1 rotate-45 bg-gold" />
-              <div className="h-px w-8 bg-vapor" />
-            </div>
+              {/* Decorative frame */}
+              <div className="absolute inset-8 pointer-events-none">
+                <div className="corner-flourish corner-flourish-tl" />
+                <div className="corner-flourish corner-flourish-tr" />
+                <div className="corner-flourish corner-flourish-bl" />
+                <div className="corner-flourish corner-flourish-br" />
+              </div>
 
-            {/* Navigation sections */}
-            <div className="mt-16 grid w-full max-w-2xl gap-12 sm:grid-cols-3">
-              {navSections.map((section) => (
-                <div key={section.heading} className="text-center">
-                  <p className="font-display text-[11px] font-medium uppercase tracking-[0.25em] text-graphite mb-4">
-                    {section.heading}
-                  </p>
-                  <nav className="flex flex-col gap-3">
-                    {section.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`font-serif text-xl font-medium transition-colors ${
-                          "accent" in link
-                            ? link.accent === "crimson"
-                              ? "text-ink hover:text-crimson"
-                              : "text-ink hover:text-jade"
-                            : "text-ink hover:text-graphite"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-              ))}
-            </div>
+              {/* Masthead */}
+              <motion.div variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}>
+                <Link
+                  href="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="font-serif text-display font-medium italic text-ink transition-colors hover:text-graphite"
+                >
+                  The Archives
+                </Link>
+              </motion.div>
 
-            {/* Bottom ornament */}
-            <div className="mt-16 flex items-center gap-3">
-              <div className="h-px w-12 bg-vapor" />
-              <div className="w-1.5 h-1.5 rotate-45 border border-vapor" />
-              <div className="h-px w-12 bg-vapor" />
-            </div>
+              <motion.div
+                className="flex items-center gap-3 mt-3"
+                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              >
+                <div className="h-px w-8 bg-vapor" />
+                <div className="w-1 h-1 rotate-45 bg-gold" />
+                <div className="h-px w-8 bg-vapor" />
+              </motion.div>
 
-            {/* Theme toggle */}
-            <div className="mt-10 flex items-center gap-3">
-              <ThemeToggle />
-              <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
-                Light
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
+              {/* Navigation sections */}
+              <motion.div
+                className="mt-16 grid w-full max-w-2xl gap-12 sm:grid-cols-3"
+                variants={{ hidden: {}, visible: {} }}
+              >
+                {navSections.map((section) => (
+                  <motion.div
+                    key={section.heading}
+                    className="text-center"
+                    variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+                    transition={{ duration: reduce ? 0 : 0.5 }}
+                  >
+                    <p className="font-display text-[11px] font-medium uppercase tracking-[0.25em] text-graphite mb-4">
+                      {section.heading}
+                    </p>
+                    <nav className="flex flex-col gap-3">
+                      {section.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setMenuOpen(false)}
+                          className={`font-serif text-xl font-medium transition-colors ${
+                            "accent" in link
+                              ? link.accent === "crimson"
+                                ? "text-ink hover:text-crimson"
+                                : "text-ink hover:text-jade"
+                              : "text-ink hover:text-graphite"
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </nav>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Bottom ornament */}
+              <motion.div
+                className="mt-16 flex items-center gap-3"
+                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              >
+                <div className="h-px w-12 bg-vapor" />
+                <div className="w-1.5 h-1.5 rotate-45 border border-vapor" />
+                <div className="h-px w-12 bg-vapor" />
+              </motion.div>
+
+              {/* Theme toggle */}
+              <motion.div
+                className="mt-10 flex items-center gap-3"
+                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              >
+                <ThemeToggle />
+                <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
+                  Light
+                </span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

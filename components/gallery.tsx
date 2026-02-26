@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { TopNav } from "./top-nav"
 
 type FilterKey = "all" | "volkov" | "qingyu"
@@ -118,11 +119,15 @@ function Lightbox({
   }, [onClose, onPrev, onNext])
 
   return (
-    <div
+    <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 backdrop-blur-sm dark:bg-black/95"
       role="dialog"
       aria-modal="true"
       aria-label={item.alt}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
     >
       {/* Close */}
       <button
@@ -177,7 +182,44 @@ function Lightbox({
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
+  )
+}
+
+function GalleryCard({ item, index, onClick }: { item: GalleryItem; index: number; onClick: () => void }) {
+  const reduce = useReducedMotion()
+
+  return (
+    <motion.button
+      onClick={onClick}
+      initial={{ opacity: 0, y: reduce ? 0 : 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : (index % 3) * 0.1 }}
+      className="group relative cursor-pointer overflow-hidden border border-vapor dark:border-vapor/30 text-left transition-all duration-300 hover:border-graphite/30 dark:hover:border-graphite/50"
+    >
+      <div className={`relative w-full ${
+        item.aspect === "landscape" ? "aspect-[16/10]" : "aspect-[3/4]"
+      }`}>
+        <Image
+          src={item.src}
+          alt={item.alt}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          sizes="(max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+      <div className="flex items-center justify-between border-t border-vapor dark:border-vapor/30 p-3">
+        <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
+          {item.caption.split(".")[0]}.
+        </span>
+        <span className={`font-display text-[9px] uppercase tracking-[0.15em] ${
+          item.character === "volkov" ? "text-crimson" : "text-jade"
+        }`}>
+          {item.type}
+        </span>
+      </div>
+    </motion.button>
   )
 }
 
@@ -246,49 +288,30 @@ export function Gallery() {
           {/* Grid */}
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
             {filtered.map((item, i) => (
-              <button
+              <GalleryCard
                 key={item.src}
+                item={item}
+                index={i}
                 onClick={() => setLightboxIndex(i)}
-                className="group relative cursor-pointer overflow-hidden border border-vapor dark:border-vapor/30 text-left transition-all duration-300 hover:border-graphite/30 dark:hover:border-graphite/50"
-              >
-                <div className={`relative w-full ${
-                  item.aspect === "landscape" ? "aspect-[16/10]" : "aspect-[3/4]"
-                }`}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="flex items-center justify-between border-t border-vapor dark:border-vapor/30 p-3">
-                  <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
-                    {item.caption.split(".")[0]}.
-                  </span>
-                  <span className={`font-display text-[9px] uppercase tracking-[0.15em] ${
-                    item.character === "volkov" ? "text-crimson" : "text-jade"
-                  }`}>
-                    {item.type}
-                  </span>
-                </div>
-              </button>
+              />
             ))}
           </div>
         </div>
       </main>
 
       {/* Lightbox */}
-      {lightboxIndex !== null && filtered[lightboxIndex] && (
-        <Lightbox
-          item={filtered[lightboxIndex]}
-          onClose={() => setLightboxIndex(null)}
-          onPrev={handlePrev}
-          onNext={handleNext}
-          index={lightboxIndex}
-          total={filtered.length}
-        />
-      )}
+      <AnimatePresence>
+        {lightboxIndex !== null && filtered[lightboxIndex] && (
+          <Lightbox
+            item={filtered[lightboxIndex]}
+            onClose={() => setLightboxIndex(null)}
+            onPrev={handlePrev}
+            onNext={handleNext}
+            index={lightboxIndex}
+            total={filtered.length}
+          />
+        )}
+      </AnimatePresence>
     </>
   )
 }

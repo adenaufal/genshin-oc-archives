@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
+import { useInView, useReducedMotion } from "motion/react"
 
 interface SliderData {
   trait: string
@@ -51,27 +52,14 @@ function SliderRow({ data, accent, animate }: { data: SliderData; accent: "crims
 }
 
 export function PersonalitySliders({ sliders, accent }: PersonalitySlidersProps) {
-  const [animate, setAnimate] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimate(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.3 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+  const inView = useInView(ref, { once: true, margin: "-20%" })
+  const reduce = useReducedMotion()
 
   return (
     <div ref={ref} className="divide-y divide-vapor dark:divide-vapor/30">
       {sliders.map((slider) => (
-        <SliderRow key={slider.trait} data={slider} accent={accent} animate={animate} />
+        <SliderRow key={slider.trait} data={slider} accent={accent} animate={reduce ? true : inView} />
       ))}
     </div>
   )

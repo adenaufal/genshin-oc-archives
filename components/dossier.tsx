@@ -26,27 +26,29 @@ export function Dossier() {
 
   return (
     <section className="relative min-h-screen py-24 lg:py-section" aria-label="Character selection">
-      {/* Background character image - Large dramatic portraits at bottom-right */}
+      {/* Background character image - Responsive positioning */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {characters.map((char, i) => (
           <div
             key={char.name}
             className="absolute transition-all duration-700 ease-out"
             style={{
-              opacity: hoveredIndex === i ? 0.5 : 0,
-              transform: hoveredIndex === i ? 'scale(1)' : 'scale(0.95)',
-              bottom: '-5%',
-              right: '-5%',
-              width: 'clamp(400px, 55vw, 900px)',
-              height: 'clamp(500px, 90vh, 1100px)',
+              opacity: hoveredIndex === i ? 0.25 : 0,
+              transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
+              top: '50%',
+              // Responsive right positioning: more centered on wide, further right on narrow
+              right: 'clamp(0%, 5vw, 10%)',
+              // Responsive sizing: smaller on narrow screens, larger on wide
+              width: 'clamp(250px, 40vw, 600px)',
+              height: 'clamp(350px, 70vh, 800px)',
             }}
           >
             <Image
               src={char.image}
               alt=""
               fill
-              className="object-contain object-bottom-right"
-              sizes="(max-width: 1024px) 60vw, 900px"
+              className="object-contain object-center"
+              sizes="(max-width: 640px) 60vw, (max-width: 1024px) 50vw, 600px"
               priority={i === 0}
               aria-hidden="true"
             />

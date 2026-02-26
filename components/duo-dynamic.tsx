@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { TopNav } from "./top-nav"
 
 const complementarityData = [
@@ -84,6 +85,14 @@ const dialogueSample = {
 
 export function DuoDynamic() {
   const [expandedDialogue, setExpandedDialogue] = useState(false)
+  const reduce = useReducedMotion()
+
+  const reveal = {
+    initial: { opacity: 0, y: reduce ? 0 : 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-60px" as const },
+    transition: { duration: reduce ? 0 : 0.7, ease: "easeOut" as const },
+  }
 
   return (
     <>
@@ -92,7 +101,7 @@ export function DuoDynamic() {
       <main className="pb-24 pt-32">
         {/* Hero section with both portraits */}
         <section className="mx-auto max-w-5xl px-6 lg:px-12">
-          <div className="flex flex-col items-center">
+          <motion.div className="flex flex-col items-center" {...reveal}>
             <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Duo Dynamic
             </p>
@@ -102,10 +111,16 @@ export function DuoDynamic() {
             <p className="mt-4 text-center font-sans text-sm text-graphite">
               Professional Partnership with Undeclared Personal Significance
             </p>
-          </div>
+          </motion.div>
 
           {/* Dual portraits */}
-          <div className="mt-16 flex items-stretch gap-4 lg:gap-6">
+          <motion.div
+            className="mt-16 flex items-stretch gap-4 lg:gap-6"
+            initial={{ opacity: 0, y: reduce ? 0 : 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: reduce ? 0 : 0.8, ease: "easeOut", delay: reduce ? 0 : 0.2 }}
+          >
             <Link href="/characters/dmitri-volkov" className="group relative flex-1 overflow-hidden border border-vapor">
               <div className="relative aspect-[3/4]">
                 <Image
@@ -140,11 +155,11 @@ export function DuoDynamic() {
                 </div>
               </div>
             </Link>
-          </div>
+          </motion.div>
         </section>
 
         {/* How They Met */}
-        <section className="mx-auto mt-24 max-w-reading px-6">
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" {...reveal}>
           <div className="flex items-center gap-4">
             <div className="h-px w-8 bg-ink" />
             <h2 className="font-serif text-title italic text-ink">
@@ -163,10 +178,10 @@ export function DuoDynamic() {
               {"The contract concluded successfully. She offered a second. He accepted. Then a third. Then it stopped being contracts and became something that neither of them has accurately named."}
             </p>
           </div>
-        </section>
+        </motion.section>
 
         {/* Complementarity Table */}
-        <section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Complementarity Analysis">
+        <motion.section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Complementarity Analysis" {...reveal}>
           <div className="flex items-center gap-4">
             <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Complementarity Analysis
@@ -241,13 +256,18 @@ export function DuoDynamic() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* What They Give Each Other */}
         <section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* What He Gives Her */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: reduce ? 0 : -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: reduce ? 0 : 0.7, ease: "easeOut" }}
+            >
               <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
                 What He Gives Her
               </p>
@@ -273,10 +293,15 @@ export function DuoDynamic() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* What She Gives Him */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: reduce ? 0 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: reduce ? 0 : 0.7, ease: "easeOut", delay: reduce ? 0 : 0.15 }}
+            >
               <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
                 What She Gives Him
               </p>
@@ -302,12 +327,12 @@ export function DuoDynamic() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Joint Combat Synergy */}
-        <section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Combat Synergy">
+        <motion.section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" aria-label="Combat Synergy" {...reveal}>
           <div className="flex items-center gap-4">
             <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Joint Combat Synergy
@@ -363,10 +388,10 @@ export function DuoDynamic() {
               {"Anonymous Treasure Hoarder captain, debriefing after a failed ambush"}
             </cite>
           </blockquote>
-        </section>
+        </motion.section>
 
         {/* Dialogue Sample */}
-        <section className="mx-auto mt-24 max-w-reading px-6" aria-label="Dialogue Sample">
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" aria-label="Dialogue Sample" {...reveal}>
           <div className="flex items-center gap-4">
             <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
               Dialogue Sample
@@ -418,19 +443,25 @@ export function DuoDynamic() {
               </button>
             )}
 
-            {expandedDialogue && (
-              <>
-                <div className="mt-6 h-px bg-vapor" />
-                <p className="mt-6 font-sans text-xs italic leading-relaxed text-graphite">
-                  {dialogueSample.closing}
-                </p>
-              </>
-            )}
+            <AnimatePresence>
+              {expandedDialogue && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: reduce ? 0 : 0.5, ease: "easeOut" }}
+                >
+                  <div className="mt-6 h-px bg-vapor" />
+                  <p className="mt-6 font-sans text-xs italic leading-relaxed text-graphite">
+                    {dialogueSample.closing}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </section>
+        </motion.section>
 
         {/* Thematic Resonance */}
-        <section className="mx-auto mt-24 max-w-reading px-6">
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" {...reveal}>
           <div className="flex items-center gap-4">
             <div className="h-px w-8 bg-ink" />
             <h2 className="font-serif text-title italic text-ink">
@@ -451,7 +482,7 @@ export function DuoDynamic() {
           <p className="mt-paragraph font-serif text-body leading-relaxed text-ink">
             {"The story of their partnership is the story of two people who are, slowly and reluctantly, building passages between fortress and labyrinth \u2014 not demolishing either structure, but creating narrow, carefully maintained corridors through which something \u2014 information, warmth, the occasional act of kindness that neither of them knows how to name \u2014 can flow."}
           </p>
-        </section>
+        </motion.section>
 
         {/* End divider */}
         <div className="mx-auto mt-24 flex justify-center">
