@@ -10,15 +10,15 @@ interface CombatDataProps {
 }
 
 const volkovData = {
-  appendix: "05",
+  appendix: "V",
   accent: "crimson" as const,
-  vision: { label: "Vision / Element", value: "Dendro", id: "CR-09" },
-  weapon: { label: "Weapon Class", value: "Claymore", type: "STRIKE" },
-  constellation: { label: "Constellation", value: "Silva Ferrum", note: "IRON FOREST" },
+  vision: { label: "Vision", value: "Dendro", note: "The Iron Forest" },
+  weapon: { label: "Weapon", value: "Claymore", note: "Heavy Strike" },
+  constellation: { label: "Constellation", value: "Silva Ferrum", note: "Iron of the Forest" },
   image: "/images/volkov_cover.webp",
-  imageCaption: "FIG 2.1: VISION HOUSING",
+  imageCaption: "Vision Housing",
   affiliation: "Exiled",
-  rank: "Deserter",
+  title: "Former Captain",
   nation: "Snezhnaya",
   birthday: "Unknown",
   height: "180cm",
@@ -26,15 +26,15 @@ const volkovData = {
 }
 
 const qingyuData = {
-  appendix: "06",
+  appendix: "VI",
   accent: "jade" as const,
-  vision: { label: "Vision / Element", value: "Dendro", id: "LY-04" },
-  weapon: { label: "Weapon Class", value: "Sword", type: "SLASH" },
-  constellation: { label: "Constellation", value: "Serpens Nebula", note: "MIST SERPENT" },
+  vision: { label: "Vision", value: "Dendro", note: "The Mist Serpent" },
+  weapon: { label: "Weapon", value: "Sword", note: "Precise Slash" },
+  constellation: { label: "Constellation", value: "Serpens Nebula", note: "Veiled in Mist" },
   image: "/images/qinyu_cover.webp",
-  imageCaption: "FIG 2.2: VISION HOUSING",
+  imageCaption: "Vision Housing",
   affiliation: "Independent",
-  rank: "Intelligence Broker",
+  title: "Intelligence Broker",
   nation: "Liyue",
   birthday: "Unknown",
   height: "167cm",
@@ -79,17 +79,17 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
         style={{ animation: "slideInRight 0.4s ease-out" }}
         role="dialog"
         aria-modal="true"
-        aria-label="Combat data"
+        aria-label="Combat capabilities"
       >
         <div className="p-8">
           {/* Header */}
           <div className="flex items-start justify-between">
             <div>
-              <p className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
+              <p className={`font-display text-[10px] font-medium uppercase tracking-[0.25em] ${accentClass}`}>
                 Appendix {data.appendix}
               </p>
-              <h2 className="mt-1 font-sans text-2xl font-bold text-ink dark:text-ink">
-                Combat Data
+              <h2 className="mt-2 font-serif text-2xl font-medium italic text-ink dark:text-ink">
+                Combat Capabilities
               </h2>
             </div>
             <button
@@ -106,7 +106,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           {/* Vision */}
           <div className="mt-10 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
-              <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+              <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                 {data.vision.label}
               </p>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-graphite" aria-hidden="true">
@@ -115,37 +115,37 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <path d="M4.93 4.93l2.83 2.83M12.24 12.24l2.83 2.83M4.93 15.07l2.83-2.83M12.24 7.76l2.83-2.83" stroke="currentColor" strokeWidth="0.75" />
               </svg>
             </div>
-            <p className={`mt-1 font-serif text-2xl ${accentClass}`}>
+            <p className={`mt-2 font-serif text-2xl font-medium ${accentClass}`}>
               {data.vision.value}
             </p>
-            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
-              ID: {data.vision.id}
+            <p className="mt-1 font-serif text-sm italic text-graphite">
+              {data.vision.note}
             </p>
           </div>
 
           {/* Weapon */}
           <div className="mt-6 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
-              <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                Weapon Class
+              <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
+                {data.weapon.label}
               </p>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-graphite" aria-hidden="true">
                 <path d="M3 17L15 5M15 5h-5M15 5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="mt-1 font-serif text-2xl text-ink dark:text-ink">
+            <p className="mt-2 font-serif text-2xl font-medium text-ink dark:text-ink">
               {data.weapon.value}
             </p>
-            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
-              TYPE: {data.weapon.type}
+            <p className="mt-1 font-serif text-sm italic text-graphite">
+              {data.weapon.note}
             </p>
           </div>
 
           {/* Constellation */}
           <div className="mt-6 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
-              <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                Constellation
+              <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
+                {data.constellation.label}
               </p>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-graphite" aria-hidden="true">
                 <circle cx="10" cy="4" r="1.5" stroke="currentColor" strokeWidth="1" />
@@ -155,10 +155,10 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <path d="M10 5.5v5M5.5 12h9M10 14.5v-3" stroke="currentColor" strokeWidth="0.75" />
               </svg>
             </div>
-            <p className="mt-1 font-serif text-2xl italic text-ink dark:text-ink">
+            <p className="mt-2 font-serif text-2xl font-medium italic text-ink dark:text-ink">
               {data.constellation.value}
             </p>
-            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+            <p className="mt-1 font-serif text-sm italic text-graphite">
               {data.constellation.note}
             </p>
           </div>
@@ -173,45 +173,45 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 className="object-cover grayscale"
                 sizes="400px"
               />
-              <span className="absolute bottom-2 right-2 font-display text-[9px] uppercase tracking-[0.15em] text-canvas/80 drop-shadow">
+              <span className="absolute bottom-2 right-2 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-canvas/90 drop-shadow">
                 {data.imageCaption}
               </span>
             </div>
           </div>
 
-          {/* Org Data */}
+          {/* Affiliation */}
           <div className="mt-8">
             <div className={`flex items-center gap-2 border-l-2 ${borderClass} pl-3`}>
-              <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
-                Org. Data
+              <span className={`font-display text-[10px] font-medium uppercase tracking-[0.2em] ${accentClass}`}>
+                Standing
               </span>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-6">
               <div>
-                <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+                <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                   Affiliation
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
+                <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">
                   {data.affiliation}
                 </p>
               </div>
               <div>
-                <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                  Rank
+                <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
+                  Title
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
-                  {data.rank}
+                <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">
+                  {data.title}
                 </p>
               </div>
             </div>
 
             <div className="mt-6 border-t border-dashed border-vapor dark:border-vapor/30 pt-6">
-              <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+              <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                 Nation of Origin
               </p>
               <div className="flex items-center justify-between">
-                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
+                <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">
                   {data.nation}
                 </p>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={accentClass} aria-hidden="true">
@@ -221,51 +221,51 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
             </div>
           </div>
 
-          {/* Bio Metrics */}
+          {/* Physical Details */}
           <div className="mt-8">
             <div className={`flex items-center gap-2 border-l-2 ${borderClass} pl-3`}>
-              <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
-                Bio. Metrics
+              <span className={`font-display text-[10px] font-medium uppercase tracking-[0.2em] ${accentClass}`}>
+                Particulars
               </span>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-6">
               <div>
-                <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+                <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                   Birthday
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.birthday}</p>
+                <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">{data.birthday}</p>
               </div>
               <div>
-                <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+                <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                   Height
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.height}</p>
+                <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">{data.height}</p>
               </div>
             </div>
 
             <div className="mt-6">
-              <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-                Voice Actor (EN)
+              <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
+                Voice (EN)
               </p>
-              <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.voiceActor}</p>
+              <p className="mt-2 font-serif text-lg font-medium text-ink dark:text-ink">{data.voiceActor}</p>
             </div>
           </div>
 
-          {/* System Status */}
+          {/* Footer */}
           <div className="mt-12 border-t border-vapor dark:border-vapor/30 pt-4">
-            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
-              System Status
+            <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
+              Record Status
             </p>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className={`h-2 w-2 rounded-full ${data.accent === "crimson" ? "bg-crimson" : "bg-jade"}`} />
-                <span className={`font-display text-[10px] uppercase tracking-[0.2em] ${accentClass}`}>
-                  Online
+                <div className={`h-2 w-2 rotate-45 ${data.accent === "crimson" ? "bg-crimson" : "bg-jade"}`} />
+                <span className={`font-display text-[10px] font-medium uppercase tracking-[0.2em] ${accentClass}`}>
+                  Verified
                 </span>
               </div>
-              <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
-                REF: {character === "volkov" ? "SNEZ-088" : "LIY-004"} // Classified
+              <span className="font-display text-[9px] font-medium uppercase tracking-[0.15em] text-graphite">
+                {character === "volkov" ? "Snezhnaya Archives" : "Liyue Registry"}
               </span>
             </div>
           </div>

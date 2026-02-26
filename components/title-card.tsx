@@ -1,13 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { motion, useReducedMotion } from "motion/react"
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export function TitleCard() {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    setVisible(true)
-  }, [])
+  const reduce = useReducedMotion()
+  const dur = reduce ? 0 : 1
 
   return (
     <section
@@ -22,51 +24,53 @@ export function TitleCard() {
         <div className="corner-flourish corner-flourish-br" />
       </div>
 
-      <div className="flex flex-col items-center gap-8 text-center">
-        {/* Subtitle - Classical serif */}
-        <p
-          className={`font-display text-[12px] font-medium uppercase tracking-[0.3em] text-graphite transition-all duration-1000 ease-out ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+      <motion.div
+        className="flex flex-col items-center gap-8 text-center"
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: reduce ? 0 : 0.2 }}
+      >
+        <motion.p
+          variants={fadeUp}
+          transition={{ duration: dur, ease: "easeOut" }}
+          className="font-display text-[12px] font-medium uppercase tracking-[0.3em] text-graphite"
         >
           From the Library of
-        </p>
+        </motion.p>
 
-        {/* Main title */}
-        <h1
-          className={`font-serif text-hero font-medium italic text-ink dark:text-ink transition-all duration-1000 delay-200 ease-out ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+        <motion.h1
+          variants={fadeUp}
+          transition={{ duration: dur, ease: "easeOut" }}
+          className="font-serif text-hero font-medium italic text-ink dark:text-ink"
         >
           The Archives
-        </h1>
+        </motion.h1>
 
-        {/* Ornamental divider */}
-        <div
-          className={`flex items-center gap-4 transition-all duration-1000 delay-500 ease-out ${
-            visible ? "opacity-100" : "opacity-0"
-          }`}
+        <motion.div
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          transition={{ duration: dur }}
+          className="flex items-center gap-4"
         >
           <div className="h-px w-12 bg-vapor" />
           <div className="w-1.5 h-1.5 rotate-45 bg-gold" />
           <div className="h-px w-12 bg-vapor" />
-        </div>
+        </motion.div>
 
-        {/* Character names */}
-        <p
-          className={`font-serif text-xl font-medium italic text-crimson transition-all duration-1000 delay-700 ease-out ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+        <motion.p
+          variants={fadeUp}
+          transition={{ duration: dur, ease: "easeOut" }}
+          className="font-serif text-xl font-medium italic text-crimson"
         >
-          Volkov <span className="text-graphite mx-2">&</span> Qingyu
-        </p>
-      </div>
+          Volkov <span className="text-graphite mx-2">&amp;</span> Qingyu
+        </motion.p>
+      </motion.div>
 
       {/* Scroll indicator */}
-      <div
-        className={`absolute bottom-16 flex flex-col items-center gap-3 transition-all duration-1000 delay-1000 ease-out ${
-          visible ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.div
+        className="absolute bottom-16 flex flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: reduce ? 0 : 1.2, duration: dur }}
       >
         <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
           Enter
@@ -87,7 +91,7 @@ export function TitleCard() {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
+      </motion.div>
     </section>
   )
 }
