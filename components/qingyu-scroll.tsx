@@ -11,7 +11,7 @@ export function QingyuScroll() {
 
   return (
     <>
-      <TopNav label="Volkov & Qingyu" refCode="LIY-004" accentColor="jade" />
+      <TopNav label="Qingyu \u2014 Identity" refCode="LIY-004" accentColor="jade" />
 
       <main className="relative pb-24 pt-32">
         {/* Subtle scroll binding motif */}
@@ -149,8 +149,8 @@ export function QingyuScroll() {
 
         {/* Bottom navigation */}
         <SectionNav
-          prev={{ label: "Dmitri Volkov", href: "/characters/dmitri-volkov" }}
-          next={null}
+          prev={{ label: "Dmitri Volkov", href: "/characters/dmitri-volkov/identity" }}
+          next={{ label: "Qingyu Hub", href: "/characters/lan-qingyu" }}
         />
       </main>
 

@@ -12,7 +12,7 @@ export function VolkovMonograph() {
 
   return (
     <>
-      <TopNav label="Volkov & Qingyu" refCode="SNEZ-088" accentColor="crimson" />
+      <TopNav label="Volkov \u2014 Identity" refCode="SNEZ-088" accentColor="crimson" />
 
       <main className="pb-24 pt-32">
         <article className="mx-auto max-w-reading px-6">
@@ -136,8 +136,8 @@ export function VolkovMonograph() {
 
         {/* Bottom navigation */}
         <SectionNav
-          prev={null}
-          next={{ label: "Lan Qingyu", href: "/characters/lan-qingyu" }}
+          prev={{ label: "Volkov Hub", href: "/characters/dmitri-volkov" }}
+          next={{ label: "Lan Qingyu", href: "/characters/lan-qingyu/identity" }}
         />
       </main>
 

@@ -109,6 +109,29 @@ export function Dossier() {
         </nav>
       </div>
 
+      {/* Secondary navigation */}
+      <div className="relative mx-auto mt-8 flex max-w-5xl items-center justify-center gap-8 px-6 lg:px-12">
+        <Link
+          href="/duo"
+          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+        >
+          Duo Dynamic
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+            <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
+        <span className="text-vapor">|</span>
+        <Link
+          href="/gallery"
+          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+        >
+          Gallery
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+            <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
+      </div>
+
       {/* Bottom metadata */}
       <div className="absolute inset-x-0 bottom-8 flex items-center justify-between px-6 lg:px-12">
         <span className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
