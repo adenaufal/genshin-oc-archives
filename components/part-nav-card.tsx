@@ -13,18 +13,18 @@ interface PartNavCardProps {
 export function PartNavCard({ number, title, description, href, accent, wordCount, readingTime }: PartNavCardProps) {
   const accentText = accent === "crimson" ? "text-crimson" : "text-jade"
   const hoverBorder = accent === "crimson"
-    ? "hover:border-crimson/30"
-    : "hover:border-jade/30"
+    ? "hover:border-crimson/30 dark:hover:border-crimson/40"
+    : "hover:border-jade/30 dark:hover:border-jade/40"
 
   return (
     <Link
       href={href}
-      className={`group block border border-vapor p-6 transition-all duration-300 ${hoverBorder} lg:p-8`}
+      className={`group block border border-vapor dark:border-vapor/30 p-6 transition-all duration-300 ${hoverBorder} lg:p-8`}
     >
       <span className={`font-mono text-caption uppercase tracking-widest-custom ${accentText}`}>
         Part {number}
       </span>
-      <h3 className="mt-3 font-serif text-title text-ink transition-colors duration-300 group-hover:text-graphite">
+      <h3 className="mt-3 font-serif text-title text-ink dark:text-ink transition-colors duration-300 group-hover:text-graphite">
         {title}
       </h3>
       <p className="mt-3 font-sans text-sm leading-relaxed text-graphite">

@@ -21,7 +21,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Dmitri Volkov portrait",
     character: "volkov",
     type: "Portrait",
-    caption: "Plate I. Portrait Study \u2014 The Iron Forest",
+    caption: "Plate I. Portrait Study — The Iron Forest",
     aspect: "portrait",
   },
   {
@@ -29,7 +29,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Lan Qingyu portrait",
     character: "qingyu",
     type: "Portrait",
-    caption: "Plate II. Portrait Study \u2014 The Mist Serpent",
+    caption: "Plate II. Portrait Study — The Mist Serpent",
     aspect: "portrait",
   },
   {
@@ -37,7 +37,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Dmitri Volkov full body reference",
     character: "volkov",
     type: "Reference",
-    caption: "Plate III. Full Reference \u2014 Volkov",
+    caption: "Plate III. Full Reference — Volkov",
     aspect: "portrait",
   },
   {
@@ -45,7 +45,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Lan Qingyu full body reference",
     character: "qingyu",
     type: "Reference",
-    caption: "Plate IV. Full Reference \u2014 Qingyu",
+    caption: "Plate IV. Full Reference — Qingyu",
     aspect: "portrait",
   },
   {
@@ -53,7 +53,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Dmitri Volkov cover illustration",
     character: "volkov",
     type: "Cover",
-    caption: "Plate V. Cover Illustration \u2014 Volkov",
+    caption: "Plate V. Cover Illustration — Volkov",
     aspect: "landscape",
   },
   {
@@ -61,7 +61,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Lan Qingyu cover illustration",
     character: "qingyu",
     type: "Cover",
-    caption: "Plate VI. Cover Illustration \u2014 Qingyu",
+    caption: "Plate VI. Cover Illustration — Qingyu",
     aspect: "landscape",
   },
   {
@@ -69,7 +69,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Dmitri Volkov marketing illustration",
     character: "volkov",
     type: "Illustration",
-    caption: "Plate VII. Marketing Illustration \u2014 Volkov",
+    caption: "Plate VII. Marketing Illustration — Volkov",
     aspect: "portrait",
   },
   {
@@ -77,7 +77,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Lan Qingyu marketing illustration",
     character: "qingyu",
     type: "Illustration",
-    caption: "Plate VIII. Marketing Illustration \u2014 Qingyu",
+    caption: "Plate VIII. Marketing Illustration — Qingyu",
     aspect: "portrait",
   },
 ]
@@ -119,7 +119,7 @@ function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 backdrop-blur-sm dark:bg-black/95"
       role="dialog"
       aria-modal="true"
       aria-label={item.alt}
@@ -212,7 +212,7 @@ export function Gallery() {
             <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
               Visual Archive
             </p>
-            <h1 className="mt-4 font-serif text-hero italic text-ink">
+            <h1 className="mt-4 font-serif text-hero italic text-ink dark:text-ink">
               Gallery
             </h1>
             <p className="mt-4 font-sans text-sm text-graphite">
@@ -227,12 +227,12 @@ export function Gallery() {
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
                 className={`font-mono text-caption uppercase tracking-widest-custom transition-colors ${
-                  activeFilter === f.key ? "text-ink" : "text-graphite hover:text-ink"
+                  activeFilter === f.key ? "text-ink dark:text-ink" : "text-graphite hover:text-ink dark:hover:text-ink-secondary"
                 }`}
               >
                 {f.label}
                 {activeFilter === f.key && (
-                  <div className="mx-auto mt-2 h-px w-full bg-ink" />
+                  <div className="mx-auto mt-2 h-px w-full bg-ink dark:bg-ink" />
                 )}
               </button>
             ))}
@@ -249,7 +249,7 @@ export function Gallery() {
               <button
                 key={item.src}
                 onClick={() => setLightboxIndex(i)}
-                className="group relative cursor-pointer overflow-hidden border border-vapor text-left transition-all duration-300 hover:border-graphite/30"
+                className="group relative cursor-pointer overflow-hidden border border-vapor dark:border-vapor/30 text-left transition-all duration-300 hover:border-graphite/30 dark:hover:border-graphite/50"
               >
                 <div className={`relative w-full ${
                   item.aspect === "landscape" ? "aspect-[16/10]" : "aspect-[3/4]"
@@ -262,7 +262,7 @@ export function Gallery() {
                     sizes="(max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="flex items-center justify-between border-t border-vapor p-3">
+                <div className="flex items-center justify-between border-t border-vapor dark:border-vapor/30 p-3">
                   <span className="font-mono text-[9px] uppercase tracking-widest-custom text-graphite">
                     {item.caption.split(".")[0]}.
                   </span>

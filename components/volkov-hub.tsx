@@ -19,7 +19,7 @@ const volkovRef = {
   weapon: "Claymore",
   constellation: "Silva Ferrum",
   summary: "A Snezhnayan war machine who deserted his post to become a walking shield for the innocent.",
-  quote: "\"You look at me and see a weapon. That is by design. If you saw what I actually am, you would not feel safe.\"",
+  quote: '"You look at me and see a weapon. That is by design. If you saw what I actually am, you would not feel safe."',
   portrait: "/images/volkov_portrait.webp",
   palette: [
     { hex: "#EAEAEA", name: "Snezhnayan Platinum" },
@@ -57,7 +57,7 @@ export function VolkovHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* VSONA Profile */}
           <section aria-label="VSONA Profile">
@@ -65,7 +65,7 @@ export function VolkovHub() {
               <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
                 VSONA Profile
               </p>
-              <div className="h-px flex-1 bg-vapor" />
+              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
             </div>
 
             <p className="mt-6 font-serif text-body-lg italic leading-relaxed text-graphite">
@@ -95,7 +95,7 @@ export function VolkovHub() {
                 {/* Combat Data trigger */}
                 <button
                   onClick={() => setCombatOpen(true)}
-                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-crimson transition-colors hover:text-ink"
+                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-crimson transition-colors hover:text-ink dark:hover:text-ink-secondary"
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />
@@ -108,7 +108,7 @@ export function VolkovHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* Deep Dive Parts */}
           <section aria-label="Character Bible">
@@ -116,7 +116,7 @@ export function VolkovHub() {
               <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
                 Character Bible
               </p>
-              <div className="h-px flex-1 bg-vapor" />
+              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -151,7 +151,7 @@ export function VolkovHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* Cross-links */}
           <section aria-label="Related" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -166,7 +166,7 @@ export function VolkovHub() {
             </Link>
             <Link
               href="/duo"
-              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
             >
               <span>Duo Dynamic</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">

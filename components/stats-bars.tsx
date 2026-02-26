@@ -44,7 +44,7 @@ export function StatsBars({ stats, accent }: StatsBarsProps) {
               {stat.value}
             </span>
           </div>
-          <div className="mt-2 h-1 w-full bg-vapor">
+          <div className="mt-2 h-1 w-full bg-vapor dark:bg-vapor/30">
             <div
               className={`h-full ${fillColor} transition-all duration-1000 ease-out`}
               style={{ width: animate ? `${stat.value}%` : "0%" }}

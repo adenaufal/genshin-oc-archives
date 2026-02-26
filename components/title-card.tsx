@@ -16,7 +16,7 @@ export function TitleCard() {
     >
       <div className="flex flex-col items-center gap-6">
         <h1
-          className={`font-serif text-hero italic text-ink transition-all duration-1000 ease-out ${
+          className={`font-serif text-hero italic text-ink dark:text-ink transition-all duration-1000 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -31,7 +31,7 @@ export function TitleCard() {
           <p className="font-mono text-caption uppercase tracking-widest-custom text-crimson">
             Volkov & Qingyu
           </p>
-          <div className="h-px w-12 bg-vapor" />
+          <div className="h-px w-12 bg-vapor dark:bg-vapor/30" />
         </div>
       </div>
 

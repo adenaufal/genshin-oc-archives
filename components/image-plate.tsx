@@ -20,7 +20,7 @@ export function ImagePlate({
   return (
     <figure className="my-16">
       <div
-        className={`relative w-full overflow-hidden border border-vapor ${
+        className={`relative w-full overflow-hidden border border-vapor dark:border-vapor/30 ${
           aspect === "portrait" ? "aspect-[3/4]" : "aspect-[16/10]"
         }`}
       >
@@ -34,7 +34,7 @@ export function ImagePlate({
           sizes="(max-width: 680px) 100vw, 680px"
         />
       </div>
-      <figcaption className="mt-3 flex items-center justify-between border-t border-vapor pt-3">
+      <figcaption className="mt-3 flex items-center justify-between border-t border-vapor dark:border-vapor/30 pt-3">
         {archiveId && (
           <span className="font-mono text-[10px] uppercase tracking-widest-custom text-graphite">
             {archiveId}

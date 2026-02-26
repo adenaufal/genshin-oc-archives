@@ -23,12 +23,12 @@ interface QuickRefCardProps {
 
 export function QuickRefCard({ data, accent }: QuickRefCardProps) {
   const accentText = accent === "crimson" ? "text-crimson" : "text-jade"
-  const accentBorder = accent === "crimson" ? "border-crimson/20" : "border-jade/20"
+  const accentBorder = accent === "crimson" ? "border-crimson/20 dark:border-crimson/30" : "border-jade/20 dark:border-jade/30"
 
   return (
     <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
       {/* Portrait */}
-      <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden border border-vapor lg:w-72">
+      <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden border border-vapor dark:border-vapor/30 lg:w-72">
         <Image
           src={data.portrait}
           alt={`${data.name} portrait`}
@@ -44,7 +44,7 @@ export function QuickRefCard({ data, accent }: QuickRefCardProps) {
         <p className={`font-mono text-caption uppercase tracking-widest-custom ${accentText}`}>
           Quick Reference
         </p>
-        <h2 className="mt-2 font-serif text-display text-ink">
+        <h2 className="mt-2 font-serif text-display text-ink dark:text-ink">
           {data.name}
         </h2>
         <p className="mt-2 font-sans text-sm italic text-graphite">
@@ -67,7 +67,7 @@ export function QuickRefCard({ data, accent }: QuickRefCardProps) {
               <dt className="font-sans text-[11px] font-medium uppercase tracking-widest-custom text-graphite">
                 {item.label}
               </dt>
-              <dd className="mt-1 font-serif text-lg text-ink">
+              <dd className="mt-1 font-serif text-lg text-ink dark:text-ink">
                 {item.value}
               </dd>
             </div>
@@ -90,7 +90,7 @@ export function QuickRefCard({ data, accent }: QuickRefCardProps) {
             {data.palette.map((color) => (
               <div key={color.hex} className="flex flex-col items-center gap-2">
                 <div
-                  className="h-8 w-8 border border-vapor"
+                  className="h-8 w-8 border border-vapor dark:border-vapor/30"
                   style={{ backgroundColor: color.hex }}
                   title={color.name}
                 />

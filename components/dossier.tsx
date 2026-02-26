@@ -74,7 +74,7 @@ export function Dossier() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="hairline" />
+              <div className="hairline dark:bg-vapor/30" />
               <div className="py-12 lg:py-16">
                 <h2
                   className={`font-serif text-hero transition-colors duration-500 ${
@@ -86,7 +86,7 @@ export function Dossier() {
                       ? char.accent === "crimson"
                         ? "text-crimson"
                         : "text-jade"
-                      : "text-ink"
+                      : "text-ink dark:text-ink"
                   }`}
                 >
                   {char.name}
@@ -105,7 +105,7 @@ export function Dossier() {
               </div>
             </Link>
           ))}
-          <div className="hairline" />
+          <div className="hairline dark:bg-vapor/30" />
         </nav>
       </div>
 
@@ -113,17 +113,17 @@ export function Dossier() {
       <div className="relative mx-auto mt-8 flex max-w-5xl items-center justify-center gap-8 px-6 lg:px-12">
         <Link
           href="/duo"
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
         >
           Duo Dynamic
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
-        <span className="text-vapor">|</span>
+        <span className="text-vapor dark:text-vapor/30">|</span>
         <Link
           href="/gallery"
-          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+          className="group flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
         >
           Gallery
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">

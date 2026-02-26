@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -31,7 +32,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#FAFAFA",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+  ],
   width: "device-width",
   initialScale: 1,
 }
@@ -45,8 +49,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable} ${jetbrains.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-canvas text-ink font-sans">{children}</body>
+      <body className="bg-canvas text-ink font-sans">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange={false}
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

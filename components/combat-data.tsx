@@ -67,7 +67,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
     <div className="fixed inset-0 z-50">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-ink/10 backdrop-blur-sm"
+        className="absolute inset-0 bg-ink/10 backdrop-blur-sm dark:bg-black/50"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -75,7 +75,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
       {/* Panel */}
       <aside
         ref={panelRef}
-        className="absolute bottom-0 right-0 top-0 w-full overflow-y-auto border-l border-vapor bg-canvas/95 backdrop-blur-md sm:w-[420px]"
+        className="absolute bottom-0 right-0 top-0 w-full overflow-y-auto border-l border-vapor dark:border-vapor/30 bg-canvas/95 backdrop-blur-md dark:bg-canvas-secondary/95 sm:w-[420px]"
         style={{ animation: "slideInRight 0.4s ease-out" }}
         role="dialog"
         aria-modal="true"
@@ -88,13 +88,13 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
               <p className={`font-mono text-caption uppercase tracking-widest-custom ${accentClass}`}>
                 Appendix {data.appendix}
               </p>
-              <h2 className="mt-1 font-sans text-2xl font-bold text-ink">
+              <h2 className="mt-1 font-sans text-2xl font-bold text-ink dark:text-ink">
                 Combat Data
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="text-graphite transition-colors hover:text-ink"
+              className="text-graphite transition-colors hover:text-ink dark:text-graphite dark:hover:text-ink-secondary"
               aria-label="Close panel"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -104,7 +104,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           </div>
 
           {/* Vision */}
-          <div className="mt-10 border-t border-vapor pt-6">
+          <div className="mt-10 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
               <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                 {data.vision.label}
@@ -124,7 +124,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           </div>
 
           {/* Weapon */}
-          <div className="mt-6 border-t border-vapor pt-6">
+          <div className="mt-6 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
               <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                 Weapon Class
@@ -133,7 +133,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <path d="M3 17L15 5M15 5h-5M15 5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="mt-1 font-serif text-2xl text-ink">
+            <p className="mt-1 font-serif text-2xl text-ink dark:text-ink">
               {data.weapon.value}
             </p>
             <p className="mt-1 font-mono text-caption uppercase tracking-widest-custom text-graphite">
@@ -142,7 +142,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
           </div>
 
           {/* Constellation */}
-          <div className="mt-6 border-t border-vapor pt-6">
+          <div className="mt-6 border-t border-vapor dark:border-vapor/30 pt-6">
             <div className="flex items-center justify-between">
               <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                 Constellation
@@ -155,7 +155,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <path d="M10 5.5v5M5.5 12h9M10 14.5v-3" stroke="currentColor" strokeWidth="0.75" />
               </svg>
             </div>
-            <p className="mt-1 font-serif text-2xl italic text-ink">
+            <p className="mt-1 font-serif text-2xl italic text-ink dark:text-ink">
               {data.constellation.value}
             </p>
             <p className="mt-1 font-mono text-caption uppercase tracking-widest-custom text-graphite">
@@ -165,7 +165,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
 
           {/* Image plate */}
           <div className="mt-8 overflow-hidden">
-            <div className="relative aspect-[16/7] w-full border border-vapor">
+            <div className="relative aspect-[16/7] w-full border border-vapor dark:border-vapor/30">
               <Image
                 src={data.image}
                 alt={`${character === "volkov" ? "Dmitri Volkov" : "Lan Qingyu"} vision detail`}
@@ -192,7 +192,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                   Affiliation
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink">
+                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
                   {data.affiliation}
                 </p>
               </div>
@@ -200,18 +200,18 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                   Rank
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink">
+                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
                   {data.rank}
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 border-t border-dashed border-vapor pt-6">
+            <div className="mt-6 border-t border-dashed border-vapor dark:border-vapor/30 pt-6">
               <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                 Nation of Origin
               </p>
               <div className="flex items-center justify-between">
-                <p className="mt-1 font-serif text-lg text-ink">
+                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">
                   {data.nation}
                 </p>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={accentClass} aria-hidden="true">
@@ -234,13 +234,13 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                   Birthday
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink">{data.birthday}</p>
+                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.birthday}</p>
               </div>
               <div>
                 <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                   Height
                 </p>
-                <p className="mt-1 font-serif text-lg text-ink">{data.height}</p>
+                <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.height}</p>
               </div>
             </div>
 
@@ -248,12 +248,12 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
               <p className="font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
                 Voice Actor (EN)
               </p>
-              <p className="mt-1 font-serif text-lg text-ink">{data.voiceActor}</p>
+              <p className="mt-1 font-serif text-lg text-ink dark:text-ink">{data.voiceActor}</p>
             </div>
           </div>
 
           {/* System Status */}
-          <div className="mt-12 border-t border-vapor pt-4">
+          <div className="mt-12 border-t border-vapor dark:border-vapor/30 pt-4">
             <p className="font-mono text-caption uppercase tracking-widest-custom text-graphite">
               System Status
             </p>

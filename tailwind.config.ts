@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,8 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         canvas: "var(--color-canvas)",
+        "canvas-secondary": "var(--color-canvas-secondary)",
         ink: "var(--color-ink)",
+        "ink-secondary": "var(--color-ink-secondary)",
         graphite: "var(--color-graphite)",
+        "graphite-secondary": "var(--color-graphite-secondary)",
         vapor: "var(--color-vapor)",
         crimson: "var(--color-crimson)",
         jade: "var(--color-jade)",

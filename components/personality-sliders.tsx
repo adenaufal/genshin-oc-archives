@@ -32,7 +32,7 @@ function SliderRow({ data, accent, animate }: { data: SliderData; accent: "crims
         <span className="w-20 shrink-0 text-right font-sans text-xs text-graphite">
           {data.leftPole}
         </span>
-        <div className="relative h-[3px] flex-1 bg-vapor">
+        <div className="relative h-[3px] flex-1 bg-vapor dark:bg-vapor/30">
           <div
             className={`absolute inset-y-0 left-0 ${fillColor} transition-all duration-1000 ease-out`}
             style={{ width: animate ? `${data.value}%` : "0%" }}
@@ -69,7 +69,7 @@ export function PersonalitySliders({ sliders, accent }: PersonalitySlidersProps)
   }, [])
 
   return (
-    <div ref={ref} className="divide-y divide-vapor">
+    <div ref={ref} className="divide-y divide-vapor dark:divide-vapor/30">
       {sliders.map((slider) => (
         <SliderRow key={slider.trait} data={slider} accent={accent} animate={animate} />
       ))}

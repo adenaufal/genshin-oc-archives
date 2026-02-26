@@ -20,7 +20,7 @@ const qingyuRef = {
   weapon: "Sword",
   constellation: "Serpens Nebula",
   summary: "Liyue's most elegant intelligence broker, who built an empire of secrets to bury a childhood of hunger.",
-  quote: "\"Everyone has a price. The truly interesting question is what currency they accept.\"",
+  quote: '"Everyone has a price. The truly interesting question is what currency they accept."',
   portrait: "/images/qinyu_portrait.webp",
   palette: [
     { hex: "#DFB129", name: "Aged Honey" },
@@ -66,7 +66,7 @@ export function QingyuHub() {
           </section>
 
           {/* Divider */}
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* VSONA Profile */}
           <section aria-label="VSONA Profile">
@@ -74,7 +74,7 @@ export function QingyuHub() {
               <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
                 VSONA Profile
               </p>
-              <div className="h-px flex-1 bg-vapor" />
+              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
             </div>
 
             <p className="mt-6 font-serif text-body-lg italic leading-relaxed text-graphite">
@@ -101,7 +101,7 @@ export function QingyuHub() {
 
                 <button
                   onClick={() => setCombatOpen(true)}
-                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink"
+                  className="mt-8 flex items-center gap-2 font-mono text-caption uppercase tracking-widest-custom text-jade transition-colors hover:text-ink dark:hover:text-ink-secondary"
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />
@@ -113,7 +113,7 @@ export function QingyuHub() {
             </div>
           </section>
 
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* Deep Dive Parts */}
           <section aria-label="Character Bible">
@@ -121,7 +121,7 @@ export function QingyuHub() {
               <p className="font-mono text-caption uppercase tracking-widest-custom text-jade">
                 Character Bible
               </p>
-              <div className="h-px flex-1 bg-vapor" />
+              <div className="h-px flex-1 bg-vapor dark:bg-vapor/30" />
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -155,7 +155,7 @@ export function QingyuHub() {
             </div>
           </section>
 
-          <div className="my-16 h-px bg-vapor" />
+          <div className="my-16 h-px bg-vapor dark:bg-vapor/30" />
 
           {/* Cross-links */}
           <section aria-label="Related" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -170,7 +170,7 @@ export function QingyuHub() {
             </Link>
             <Link
               href="/duo"
-              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-3 font-mono text-caption uppercase tracking-widest-custom text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
             >
               <span>Duo Dynamic</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
