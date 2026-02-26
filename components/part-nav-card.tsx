@@ -12,53 +12,57 @@ interface PartNavCardProps {
 
 export function PartNavCard({ number, title, description, href, accent, wordCount, readingTime }: PartNavCardProps) {
   const accentText = accent === "crimson" ? "text-crimson" : "text-jade"
-  const hoverBorder = accent === "crimson"
-    ? "hover:border-crimson/30 dark:hover:border-crimson/40"
-    : "hover:border-jade/30 dark:hover:border-jade/40"
+  const accentBg = accent === "crimson" ? "bg-crimson" : "bg-jade"
+  const accentBorder = accent === "crimson" 
+    ? "border-crimson/30 hover:border-crimson" 
+    : "border-jade/30 hover:border-jade"
+  const accentHoverBg = accent === "crimson" 
+    ? "hover:bg-crimson hover:text-canvas" 
+    : "hover:bg-jade hover:text-canvas"
 
   return (
     <Link
       href={href}
-      className={`group block border border-vapor dark:border-vapor/30 p-6 transition-all duration-300 ${hoverBorder} lg:p-8`}
+      className={`group relative block overflow-hidden rounded-lg border-2 ${accentBorder} bg-canvas-secondary/30 p-6 transition-all duration-300 ${accentHoverBg} lg:p-8`}
     >
-      {/* Corner flourishes */}
-      <div className="relative">
-        <div className="absolute -top-6 -left-6 w-4 h-4 border-l border-t border-vapor/30" />
-        <div className="absolute -top-6 -right-6 w-4 h-4 border-r border-t border-vapor/30" />
-        <div className="absolute -bottom-6 -left-6 w-4 h-4 border-l border-b border-vapor/30" />
-        <div className="absolute -bottom-6 -right-6 w-4 h-4 border-r border-b border-vapor/30" />
+      {/* Number badge */}
+      <div className={`absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full ${accentBg} text-canvas`}>
+        <span className="font-display text-xs font-bold">{number}</span>
       </div>
 
-      <span className={`font-display text-[10px] uppercase tracking-[0.25em] ${accentText}`}>
-        Book {number}
-      </span>
-      <h3 className="mt-3 font-serif text-title text-ink dark:text-ink transition-colors duration-300 group-hover:text-graphite">
-        {title}
-      </h3>
-      <p className="mt-3 font-sans text-sm leading-relaxed text-graphite">
-        {description}
-      </p>
-      {(wordCount || readingTime) && (
-        <div className="mt-4 flex items-center gap-4">
-          {wordCount && (
-            <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
-              {wordCount} words
-            </span>
-          )}
-          {readingTime && (
-            <span className="font-display text-[9px] uppercase tracking-[0.15em] text-graphite">
-              {readingTime}
-            </span>
-          )}
-        </div>
-      )}
-      <div className="mt-5 flex items-center gap-2">
-        <span className={`font-serif text-sm italic ${accentText} transition-transform duration-300 group-hover:translate-x-1`}>
-          Begin Reading
+      <div className="pr-10">
+        <span className={`font-display text-[10px] font-medium uppercase tracking-[0.2em] ${accentText} group-hover:text-current`}>
+          Part {number}
         </span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={`${accentText} transition-transform duration-300 group-hover:translate-x-1`} aria-hidden="true">
-          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <h3 className="mt-2 font-serif text-xl font-medium text-ink dark:text-ink group-hover:text-current">
+          {title}
+        </h3>
+        <p className="mt-3 font-sans text-sm leading-relaxed text-graphite group-hover:text-current/80">
+          {description}
+        </p>
+        
+        {(wordCount || readingTime) && (
+          <div className="mt-4 flex items-center gap-3 text-graphite group-hover:text-current/70">
+            {readingTime && (
+              <span className="flex items-center gap-1.5 font-display text-[10px] uppercase tracking-[0.1em]">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1" />
+                  <path d="M6 3v3l2 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                </svg>
+                {readingTime}
+              </span>
+            )}
+          </div>
+        )}
+        
+        <div className="mt-5 flex items-center gap-2">
+          <span className={`font-serif text-sm font-medium italic ${accentText} group-hover:text-current`}>
+            Read Chapter
+          </span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={`${accentText} transition-transform duration-300 group-hover:translate-x-1 group-hover:text-current`}>
+            <path d="M3 8h10M9 5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </div>
     </Link>
   )

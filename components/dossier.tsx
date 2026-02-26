@@ -26,19 +26,17 @@ export function Dossier() {
 
   return (
     <section className="relative min-h-screen py-24 lg:py-section" aria-label="Character selection">
-      {/* Background character image - Responsive positioning */}
+      {/* Background character image */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {characters.map((char, i) => (
           <div
             key={char.name}
             className="absolute transition-all duration-700 ease-out"
             style={{
-              opacity: hoveredIndex === i ? 0.25 : 0,
+              opacity: hoveredIndex === i ? 0.2 : 0,
               transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
               top: '50%',
-              // Responsive right positioning: more centered on wide, further right on narrow
               right: 'clamp(0%, 5vw, 10%)',
-              // Responsive sizing: smaller on narrow screens, larger on wide
               width: 'clamp(250px, 40vw, 600px)',
               height: 'clamp(350px, 70vh, 800px)',
             }}
@@ -57,7 +55,7 @@ export function Dossier() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
-        {/* Section header - Classical style */}
+        {/* Section header */}
         <div className="mb-16 flex items-center gap-6">
           <span className="font-display text-[11px] font-medium uppercase tracking-[0.25em] text-graphite">
             Volume I
@@ -114,40 +112,57 @@ export function Dossier() {
                 >
                   {char.role}
                 </p>
+                
+                {/* Visual indicator this is clickable */}
+                <div 
+                  className={`mt-4 ml-12 flex items-center gap-2 transition-all duration-500 ${
+                    hoveredIndex === i ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <span className={`font-display text-[10px] font-medium uppercase tracking-[0.15em] ${
+                    char.accent === "crimson" ? "text-crimson" : "text-jade"
+                  }`}>
+                    View Profile
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={
+                    char.accent === "crimson" ? "text-crimson" : "text-jade"
+                  }>
+                    <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
           <div className="hairline" />
         </nav>
 
-        {/* Secondary navigation - Classical style */}
-        <div className="mt-16 flex flex-col items-center gap-8 sm:flex-row sm:justify-center">
-          <div className="flex items-center gap-2">
+        {/* Secondary navigation */}
+        <div className="mt-16 flex flex-col items-center gap-8">
+          <div className="flex items-center gap-3">
             <div className="h-px w-8 bg-vapor" />
             <span className="font-display text-[11px] font-medium uppercase tracking-[0.2em] text-graphite">
-              Also Within
+              Also Explore
             </span>
             <div className="h-px w-8 bg-vapor" />
           </div>
           
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/duo"
-              className="group flex items-center gap-2 font-serif text-base font-medium italic text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-2 rounded-md border border-vapor px-5 py-3 font-serif text-base font-medium text-ink transition-all hover:border-ink hover:bg-ink hover:text-canvas"
             >
               <span>The Duo</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-                <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
-            <span className="text-vapor">·</span>
             <Link
               href="/gallery"
-              className="group flex items-center gap-2 font-serif text-base font-medium italic text-graphite transition-colors hover:text-ink"
+              className="group flex items-center gap-2 rounded-md border border-vapor px-5 py-3 font-serif text-base font-medium text-ink transition-all hover:border-ink hover:bg-ink hover:text-canvas"
             >
               <span>Gallery</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-                <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>

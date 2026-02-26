@@ -66,7 +66,7 @@ export function VolkovHub() {
           {/* VSONA Profile */}
           <section aria-label="VSONA Profile">
             <div className="flex items-center gap-4">
-              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-crimson">
+              <span className="font-display text-[10px] font-medium uppercase tracking-[0.25em] text-crimson">
                 Nature & Disposition
               </span>
               <div className="h-px flex-1 bg-vapor" />
@@ -79,7 +79,7 @@ export function VolkovHub() {
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               {/* Personality Sliders */}
               <div>
-                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                <h3 className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                   Temperament
                 </h3>
                 <div className="mt-4">
@@ -89,23 +89,22 @@ export function VolkovHub() {
 
               {/* Stats */}
               <div>
-                <h3 className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                <h3 className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
                   Aptitudes
                 </h3>
                 <div className="mt-4">
                   <StatsBars stats={volkovStats} accent="crimson" />
                 </div>
 
-                {/* Combat Data trigger */}
+                {/* Combat Data trigger - More prominent button */}
                 <button
                   onClick={() => setCombatOpen(true)}
-                  className="mt-8 flex items-center gap-2 font-serif text-sm italic text-crimson transition-colors hover:text-ink"
+                  className="mt-8 flex w-full items-center justify-center gap-2 rounded-md border-2 border-crimson/30 bg-crimson/5 px-5 py-3 font-serif text-sm font-medium text-crimson transition-all hover:bg-crimson hover:text-canvas"
                 >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1" />
-                    <path d="M7 4v3h3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 9V7M8 5.5V5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
-                  View Combat Capabilities
+                  View Combat Details
                 </button>
               </div>
             </div>
@@ -121,11 +120,15 @@ export function VolkovHub() {
           {/* Deep Dive Parts */}
           <section aria-label="Character Bible">
             <div className="flex items-center gap-4">
-              <span className="font-display text-[10px] uppercase tracking-[0.25em] text-crimson">
+              <span className="font-display text-[10px] font-medium uppercase tracking-[0.25em] text-crimson">
                 The Complete Record
               </span>
               <div className="h-px flex-1 bg-vapor" />
             </div>
+            
+            <p className="mt-4 font-sans text-sm text-graphite">
+              Choose a chapter to begin reading. Each section explores a different facet of the character.
+            </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <PartNavCard
@@ -134,7 +137,6 @@ export function VolkovHub() {
                 description="Name analysis, psychological framework, MBTI/Enneagram, attachment style, and the paradox of his Dendro Vision."
                 href="/characters/dmitri-volkov/identity"
                 accent="crimson"
-                wordCount="13,500"
                 readingTime="~45 min"
               />
               <PartNavCard
@@ -143,7 +145,6 @@ export function VolkovHub() {
                 description="Complete backstory timeline, the desertion, key relationships, and the journey from Snezhnaya to Liyue."
                 href="/characters/dmitri-volkov/history"
                 accent="crimson"
-                wordCount="28,000"
                 readingTime="~90 min"
               />
               <PartNavCard
@@ -152,7 +153,6 @@ export function VolkovHub() {
                 description="Behavioral encyclopedia, writing guide, daily routines, micro-expressions, and dialogue patterns."
                 href="/characters/dmitri-volkov/behavior"
                 accent="crimson"
-                wordCount="12,000"
                 readingTime="~40 min"
               />
             </div>
@@ -165,26 +165,43 @@ export function VolkovHub() {
             <div className="h-px w-24 bg-vapor" />
           </div>
 
-          {/* Cross-links */}
-          <section aria-label="Related" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <Link
-              href="/characters/lan-qingyu"
-              className="group flex items-center gap-3 font-serif text-title text-graphite transition-colors hover:text-jade"
-            >
-              <span>Lan Qingyu</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
-                <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-            <Link
-              href="/duo"
-              className="group flex items-center gap-3 font-serif text-base italic text-graphite transition-colors hover:text-ink"
-            >
-              <span>The Duo</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
-                <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+          {/* Cross-links - Improved navigation */}
+          <section aria-label="Related Characters" className="rounded-lg border border-vapor bg-canvas-secondary/30 p-6">
+            <p className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite mb-4">
+              Explore Others
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link
+                href="/characters/lan-qingyu"
+                className="group flex items-center gap-3 rounded-md p-3 transition-colors hover:bg-vapor/30"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-jade/10">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-jade">
+                    <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-display text-[10px] font-medium uppercase tracking-[0.1em] text-graphite">Next Character</p>
+                  <p className="font-serif text-lg font-medium text-ink group-hover:text-jade">Lan Qingyu</p>
+                </div>
+              </Link>
+              
+              <Link
+                href="/duo"
+                className="group flex items-center gap-3 rounded-md p-3 transition-colors hover:bg-vapor/30"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gold">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M8 5v3l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-display text-[10px] font-medium uppercase tracking-[0.1em] text-graphite">Special</p>
+                  <p className="font-serif text-lg font-medium text-ink group-hover:text-gold">The Duo</p>
+                </div>
+              </Link>
+            </div>
           </section>
         </div>
       </main>

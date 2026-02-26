@@ -13,31 +13,36 @@ interface SectionNavProps {
 export function SectionNav({ prev, next }: SectionNavProps) {
   return (
     <nav
-      className="mx-auto mt-24 flex max-w-reading items-center justify-between px-6"
+      className="mx-auto mt-20 flex max-w-reading items-center justify-between gap-4 px-6"
       aria-label="Page navigation"
     >
       {prev ? (
         <Link
           href={prev.href}
-          className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+          className="group flex flex-col items-start gap-1 rounded-lg p-3 transition-colors hover:bg-vapor/30"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            className="transition-transform group-hover:-translate-x-1"
-            aria-hidden="true"
-          >
-            <path
-              d="M10 3L5 8l5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Prev: {prev.label}
+          <span className="flex items-center gap-2 font-display text-[10px] font-medium uppercase tracking-[0.15em] text-graphite">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              className="transition-transform group-hover:-translate-x-1"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 2L3 7l5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Previous
+          </span>
+          <span className="font-serif text-base font-medium text-ink">
+            {prev.label}
+          </span>
         </Link>
       ) : (
         <div />
@@ -46,25 +51,30 @@ export function SectionNav({ prev, next }: SectionNavProps) {
       {next ? (
         <Link
           href={next.href}
-          className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite transition-colors hover:text-ink dark:hover:text-ink-secondary"
+          className="group flex flex-col items-end gap-1 rounded-lg p-3 transition-colors hover:bg-vapor/30"
         >
-          {next.label}
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            className="transition-transform group-hover:translate-x-1"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 3l5 5-5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <span className="flex items-center gap-2 font-display text-[10px] font-medium uppercase tracking-[0.15em] text-graphite">
+            Next
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              className="transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 2l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="font-serif text-base font-medium text-ink text-right">
+            {next.label}
+          </span>
         </Link>
       ) : (
         <div />
