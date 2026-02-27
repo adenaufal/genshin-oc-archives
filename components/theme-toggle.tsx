@@ -2,9 +2,10 @@
 
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "motion/react"
 
 export function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -17,9 +18,7 @@ export function ThemeToggle() {
         className="rounded-full p-2 text-graphite transition-colors"
         aria-label="Toggle theme"
       >
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <circle cx="9" cy="9" r="7" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
+        <div className="h-[18px] w-[18px]" />
       </button>
     )
   }
@@ -29,22 +28,79 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="rounded-full p-2 text-graphite transition-colors hover:text-ink hover:bg-vapor/50 dark:text-graphite-dark dark:hover:text-canvas dark:hover:bg-ink/50"
+      className="group relative rounded-full p-2 text-graphite transition-colors hover:text-ink hover:bg-vapor/50 dark:text-graphite-dark dark:hover:text-canvas dark:hover:bg-ink/50"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      {isDark ? (
-        // Sun icon for dark mode
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <circle cx="9" cy="9" r="3" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.34 3.34l1.42 1.42M13.24 13.24l1.42 1.42M3.34 14.66l1.42-1.42M13.24 4.34l1.42-1.42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      ) : (
-        // Moon icon for light mode
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <path d="M15.5 9.5c-.6 2.3-2.7 4-5.2 4-3 0-5.5-2.5-5.5-5.5 0-2.5 1.7-4.6 4-5.2-2.3.3-4.2 2.3-4.2 4.7 0 2.6 2.1 4.7 4.7 4.7 2.4 0 4.4-1.9 4.7-4.2-.3 1-.8 1.5-1.5 1.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      <div className="relative h-[18px] w-[18px] overflow-hidden">
+        <AnimatePresence mode="wait" initial={false}>
+          {isDark ? (
+            <motion.svg
+              key="sun"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="absolute inset-0"
+              initial={{ rotate: -45, scale: 0.5, opacity: 0 }}
+              animate={{ rotate: 0, scale: 1, opacity: 1 }}
+              exit={{ rotate: 45, scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <circle cx="12" cy="12" r="4" />
+              <motion.g
+                initial={{ opacity: 0, scale: 0.4 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="M4.93 4.93l1.41 1.41" />
+                <path d="M17.66 17.66l1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="M6.34 17.66l-1.41 1.41" />
+                <path d="M19.07 4.93l-1.41 1.41" />
+              </motion.g>
+            </motion.svg>
+          ) : (
+            <motion.svg
+              key="moon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="absolute inset-0"
+              initial={{ rotate: 45, scale: 0.5, opacity: 0 }}
+              animate={{ rotate: 0, scale: 1, opacity: 1 }}
+              exit={{ rotate: -45, scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              <motion.circle
+                cx="19.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.6, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.15 }}
+              />
+            </motion.svg>
+          )}
+        </AnimatePresence>
+      </div>
     </button>
   )
 }

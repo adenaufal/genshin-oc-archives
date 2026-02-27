@@ -37,12 +37,12 @@ export function PartNavCard({ number, title, description, href, accent, wordCoun
         <h3 className="mt-2 font-serif text-xl font-medium text-ink dark:text-ink group-hover:text-current">
           {title}
         </h3>
-        <p className="mt-3 font-sans text-sm leading-relaxed text-graphite group-hover:text-current/90">
+        <p className="mt-3 font-sans text-sm leading-relaxed text-graphite group-hover:text-canvas/90">
           {description}
         </p>
         
         {(wordCount || readingTime) && (
-          <div className="mt-4 flex items-center gap-3 text-graphite group-hover:text-current/80">
+          <div className="mt-4 flex items-center gap-3 text-graphite group-hover:text-canvas/80">
             {readingTime && (
               <span className="flex items-center gap-1.5 font-display text-[10px] uppercase tracking-[0.1em]">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
