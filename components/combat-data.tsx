@@ -173,7 +173,7 @@ export function CombatData({ isOpen, onClose, character }: CombatDataProps) {
                 className="object-cover grayscale"
                 sizes="400px"
               />
-              <span className="absolute bottom-2 right-2 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-canvas/90 drop-shadow">
+              <span className="absolute bottom-2 right-2 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-white/90 drop-shadow">
                 {data.imageCaption}
               </span>
             </div>

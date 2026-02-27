@@ -131,8 +131,8 @@ export function DuoDynamic() {
                   sizes="(max-width: 1024px) 50vw, 400px"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent p-6 pt-24">
-                  <span className="font-serif text-2xl text-canvas lg:text-3xl drop-shadow-lg">Dmitri Volkov</span>
-                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-canvas drop-shadow-md">
+                  <span className="font-serif text-2xl text-white lg:text-3xl drop-shadow-lg">Dmitri Volkov</span>
+                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-white/90 drop-shadow-md">
                     The Iron Forest
                   </p>
                 </div>
@@ -148,8 +148,8 @@ export function DuoDynamic() {
                   sizes="(max-width: 1024px) 50vw, 400px"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent p-6 pt-24">
-                  <span className="font-serif text-2xl text-canvas lg:text-3xl drop-shadow-lg">Lan Qingyu</span>
-                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-canvas drop-shadow-md">
+                  <span className="font-serif text-2xl text-white lg:text-3xl drop-shadow-lg">Lan Qingyu</span>
+                  <p className="mt-1 font-display text-[9px] uppercase tracking-[0.15em] text-white/90 drop-shadow-md">
                     The Mist Serpent
                   </p>
                 </div>
