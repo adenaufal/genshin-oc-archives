@@ -31,7 +31,7 @@ export function Dossier() {
         {characters.map((char, i) => (
           <div
             key={char.name}
-            className="absolute inset-x-0 mx-auto sm:inset-x-auto sm:mx-0 sm:right-[3vw] lg:right-[5%] top-[20%] w-[75vw] sm:w-[50vw] lg:w-[45vw] max-w-[650px] h-[65%] transition-all duration-700 ease-out"
+            className="absolute inset-x-0 mx-auto sm:inset-x-auto sm:mx-0 sm:right-[3vw] lg:right-[5%] top-[45%] sm:top-[20%] w-[90vw] sm:w-[50vw] lg:w-[45vw] max-w-[650px] h-[50%] sm:h-[65%] transition-all duration-700 ease-out"
             style={{
               opacity: hoveredIndex === i ? 0.35 : 0,
               transform: hoveredIndex === i ? 'scale(1)' : 'scale(0.92)',

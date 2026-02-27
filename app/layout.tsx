@@ -26,6 +26,7 @@ const cactusClassical = Cactus_Classical_Serif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://genshin-oc.pages.dev"),
   title: "The Archives | Volkov & Qingyu",
   description:
     "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
       "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Dmitri Volkov and Lan Qingyu — The Archives",
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     title: "The Archives | Volkov & Qingyu",
     description:
       "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image.jpg"],
   },
 }
 
