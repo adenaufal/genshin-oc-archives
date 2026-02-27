@@ -4,7 +4,7 @@
 
 A digital archive presenting the lore of two Genshin Impact original characters — **Dmitri Volkov** and **Lan Qingyu** — with the reverence of a museum monograph.
 
-[Live Site](https://genshin-chrientmip.pages.dev) · [Report Issue](https://github.com/adenaufal/genshin-oc-archives/issues)
+[Live Site](https://genshin-oc.pages.dev/) · [Report Issue](https://github.com/adenaufal/genshin-oc-archives/issues)
 
 </div>
 
