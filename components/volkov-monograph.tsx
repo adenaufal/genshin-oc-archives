@@ -386,7 +386,7 @@ export function VolkovMonograph() {
         {/* Bottom navigation */}
         <SectionNav
           prev={{ label: "Volkov Hub", href: "/characters/dmitri-volkov" }}
-          next={{ label: "Lan Qingyu", href: "/characters/lan-qingyu/identity" }}
+          next={{ label: "History & Relationships", href: "/characters/dmitri-volkov/history" }}
         />
       </main>
 

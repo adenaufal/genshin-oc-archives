@@ -329,7 +329,7 @@ export function QingyuMonograph() {
         {/* Bottom navigation */}
         <SectionNav
           prev={{ label: "Qingyu Hub", href: "/characters/lan-qingyu" }}
-          next={{ label: "Dmitri Volkov", href: "/characters/dmitri-volkov/identity" }}
+          next={{ label: "History & Relationships", href: "/characters/lan-qingyu/history" }}
         />
       </main>
 
