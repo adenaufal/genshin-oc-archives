@@ -29,6 +29,31 @@ export const metadata: Metadata = {
   title: "The Archives | Volkov & Qingyu",
   description:
     "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "The Archives | Volkov & Qingyu",
+    description:
+      "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dmitri Volkov and Lan Qingyu — The Archives",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Archives | Volkov & Qingyu",
+    description:
+      "A digital archive presenting the lore of Dmitri Volkov and Lan Qingyu with the reverence of a museum monograph.",
+    images: ["/images/og-image.png"],
+  },
 }
 
 export const viewport: Viewport = {

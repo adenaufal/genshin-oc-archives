@@ -59,7 +59,16 @@ export function VolkovBehavior() {
             </p>
 
             <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
-              {'Breakfast is functional. Food is fuel. The one exception is tea — not the elaborate ceremony of Liyue culture, but a simple preparation of herbs steeped for exactly four minutes. He drinks it slowly, and this is what passes for comfort.'}
+              {'Breakfast is functional. Food is fuel. He eats light and late — half a rice ball at dawn is what he considers sufficient. The one exception is tea — not the elaborate ceremony of Liyue culture, but a simple preparation of herbs steeped for exactly four minutes. He drinks it slowly, and this is what passes for comfort.'}
+            </p>
+
+            {/* Subsection: Walks Ahead */}
+            <h3 className="mt-12 font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
+              Positioning: Walks Ahead
+            </h3>
+
+            <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'When traveling with others, Dmitri walks ahead. Always. Not beside, not behind — ahead, by exactly three to five paces. This is not rudeness; it is tactical positioning. The point man absorbs the first contact. He places himself between the unknown and whoever follows. If asked to walk beside someone, he will comply for approximately ninety seconds before drifting forward again. The habit is involuntary.'}
             </p>
 
             {/* Subsection: Evening */}
@@ -226,6 +235,13 @@ export function VolkovBehavior() {
             <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
               {'Wherever he stays for more than a few days, he grows things. Not deliberately — or not admittedly deliberately. A window box develops herb seedlings. A campsite shows new growth for weeks after his departure. He has left a trail of tiny gardens across Teyvat.'}
             </p>
+
+            <div className="mt-6 border-l-2 border-crimson/20 dark:border-crimson/30 pl-6">
+              <p className="font-serif text-base font-medium text-ink dark:text-ink">Talks to Plants</p>
+              <p className="mt-1 font-sans text-sm text-graphite">
+                {'In absolute solitude, Dmitri talks to his plants. Not in the conversational way of someone with a hobby, but in the same terse, reporting style he uses for everything: "You need more water. The soil is too compact. I will fix it." He would be mortified if anyone witnessed this. The plants, for their part, respond to his Dendro resonance with visible enthusiasm.'}
+              </p>
+            </div>
           </section>
 
           {/* Image plate */}
@@ -269,6 +285,95 @@ export function VolkovBehavior() {
                   {'When the stress event resolves, Dmitri does not relax — he collapses internally while maintaining external composure. A fine tremor appears in his hands. Appetite loss persists for hours. Verbal shutdown reduces speech to near-silence. The silence can persist for hours; he is processing.'}
                 </p>
               </div>
+            </div>
+          </section>
+
+          {/* Section: PTSD Episodes */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                PTSD Episode Anatomy
+              </h2>
+            </div>
+
+            <details className="mt-8 border border-vapor dark:border-vapor/30">
+              <summary className="cursor-pointer px-5 py-4 font-display text-[10px] uppercase tracking-[0.2em] text-crimson hover:text-ink transition-colors">
+                Triggers / Escalation / Recovery
+              </summary>
+              <div className="border-t border-vapor dark:border-vapor/30 px-5 py-5 space-y-4">
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Triggers</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">
+                    {'Smell of smoke (especially burning wood or fabric), metal-on-metal sounds, flat winter light, children crying, sudden physical contact from behind. Each trigger can activate a different trauma layer.'}
+                  </p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Escalation</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">
+                    {'The experiencing self separates from the acting self. Body continues to function — he can fight, walk, speak — but the person behind the eyes has temporarily vacated. His breathing pattern shifts to a combat cadence: four counts in, seven counts hold, eight counts out. His posture curls inward, shoulders hunching, head dropping — a protective fetal instinct that horrifies him when he becomes aware of it.'}
+                  </p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Recovery</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">
+                    {'A fine tremor appears in his hands. Appetite loss persists for hours. Verbal shutdown reduces speech to near-silence. He seeks physical grounding: hands on bark, feet on earth, the weight of the claymore across his knees. Recovery can take minutes or days depending on the layer activated.'}
+                  </p>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          {/* Section: Dialogue Samples */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Dialogue Samples
+              </h2>
+            </div>
+
+            <div className="mt-8 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-sans text-xs italic leading-relaxed text-graphite">
+                {'Under Stress — During Combat'}
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <div className="mt-4 flex flex-col gap-3">
+                <div className="flex gap-4">
+                  <span className="w-16 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
+                  <div>
+                    <span className="font-sans text-xs italic text-graphite">[to civilians] </span>
+                    <span className="font-serif text-sm leading-relaxed text-ink dark:text-ink">Wall. Now. Stay low. Do not move until I say.</span>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="w-16 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
+                  <div>
+                    <span className="font-sans text-xs italic text-graphite">[barely audible] </span>
+                    <span className="font-serif text-sm leading-relaxed text-ink dark:text-ink">Three left flank. Two right. Archer on the ridge. Archer first.</span>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="w-16 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
+                  <div>
+                    <span className="font-sans text-xs italic text-graphite">[after combat, breathing hard] </span>
+                    <span className="font-serif text-sm leading-relaxed text-ink dark:text-ink">Clear. Is anyone injured.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-sans text-xs italic leading-relaxed text-graphite">
+                {'Internal Monologue — Liyue Market'}
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <p className="mt-4 font-serif text-sm italic leading-relaxed text-ink dark:text-ink">
+                {'The market smells like cardamom and woodsmoke. Everything in Liyue smells like something — spices, incense, the harbor salt. Snezhnaya smelled like iron and pine and cold so sharp it had no smell at all, just the absence of warmth in your lungs.'}
+              </p>
+              <p className="mt-3 font-serif text-sm italic leading-relaxed text-ink dark:text-ink">
+                {'The child is staring at me again. Third stall on the left, hiding behind her mother\'s skirt. Small. Maybe six. She has been watching me for eleven minutes. I have been pretending not to notice because noticing would frighten her and frightening children is — no. I do not frighten children. That is a line.'}
+              </p>
             </div>
           </section>
 

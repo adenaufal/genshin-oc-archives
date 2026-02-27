@@ -104,6 +104,36 @@ export function QingyuBehavior() {
                 <p><strong className="text-ink dark:text-ink">Energy cost:</strong> Moderate — closer to authentic, but still managed</p>
               </div>
             </div>
+
+            {/* Survivor Mask */}
+            <div className="mt-6 border border-vapor dark:border-vapor/30 p-6">
+              <div className="flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-jade" />
+                <h3 className="font-serif text-xl text-ink dark:text-ink">The Survivor Mask</h3>
+              </div>
+              <div className="mt-4 space-y-2 font-sans text-sm text-graphite">
+                <p><strong className="text-ink dark:text-ink">Posture:</strong> Coiled, compact, center of gravity lowered — the dock-district girl ready to run</p>
+                <p><strong className="text-ink dark:text-ink">Gesture:</strong> Minimal, defensive — hands close to body, exits already mapped</p>
+                <p><strong className="text-ink dark:text-ink">Speech:</strong> Clipped, accent hardens, classical allusions vanish entirely</p>
+                <p><strong className="text-ink dark:text-ink">Eye contact:</strong> Hypervigilant scanning, tracking every movement in the room</p>
+                <p><strong className="text-ink dark:text-ink">Energy cost:</strong> Low — this is instinct, not performance. The oldest mask, worn before she knew what masks were</p>
+              </div>
+            </div>
+
+            {/* Child Mask */}
+            <div className="mt-6 border border-vapor dark:border-vapor/30 p-6">
+              <div className="flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-jade" />
+                <h3 className="font-serif text-xl text-ink dark:text-ink">The Child</h3>
+              </div>
+              <div className="mt-4 space-y-2 font-sans text-sm text-graphite">
+                <p><strong className="text-ink dark:text-ink">Posture:</strong> Curled, small, shoulders drawn in — the body remembering what the mind has archived</p>
+                <p><strong className="text-ink dark:text-ink">Gesture:</strong> Self-soothing — silk between fingers, arms wrapped around herself, touching the beauty mark</p>
+                <p><strong className="text-ink dark:text-ink">Speech:</strong> Quiet, halting, sometimes silent entirely. When words come, they are simple</p>
+                <p><strong className="text-ink dark:text-ink">Eye contact:</strong> Avoidant, or fixed on a single point — the thousand-yard stare of someone looking inward</p>
+                <p><strong className="text-ink dark:text-ink">Energy cost:</strong> {'None — this is not a performance. This is what remains when every mask has failed. Seen by fewer than three living people'}</p>
+              </div>
+            </div>
           </section>
 
           {/* Section: Physical Tells */}
@@ -193,6 +223,47 @@ export function QingyuBehavior() {
             </p>
           </section>
 
+          {/* Section: Operational Tradecraft */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-jade" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Operational Tradecraft
+              </h2>
+            </div>
+
+            <p className="mt-8 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Qingyu\'s intelligence work is not improvised — it is a system refined over two decades of practice, maintained with the discipline of a military operation and the elegance of a tea ceremony.'}
+            </p>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div className="border border-vapor dark:border-vapor/30 p-5">
+                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">Dead Drops</h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-graphite">
+                  {'Serviced on a rotating schedule, with locations changed monthly according to a system only she fully understands. Flower arrangements delivered by seemingly innocent vendors. Coded notes slipped under doors. Messages embedded in market transactions. The network is invisible to anyone who does not know what to look for.'}
+                </p>
+              </div>
+
+              <div className="border border-vapor dark:border-vapor/30 p-5">
+                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">Cipher Rotation</h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-graphite">
+                  {'She uses multiple cipher systems, rotated based on the sensitivity of the information and the reliability of the courier. Her primary system is a polyalphabetic cipher keyed to passages from a specific edition of a Liyue poetry anthology. Without the key text and the knowledge of which passages correspond to which cipher wheels, her correspondence is indecipherable.'}
+                </p>
+              </div>
+
+              <div className="border border-vapor dark:border-vapor/30 p-5">
+                <h3 className="font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">Safe Houses</h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-graphite">
+                  {'A network of rented rooms, cooperative business owners, and discreet locations across the harbor. Meetings with informants take place in carefully selected locations — never the same place twice in succession, never anywhere that could be easily surveilled. She maintains at least two exit routes from every location she frequents.'}
+                </p>
+              </div>
+            </div>
+
+            <PullQuote accent="jade">
+              {'\"An information network is a living thing, and it requires constant tending. Qingyu tends hers the way a gardener tends a poisonous but beautiful vine — with care, with respect, and with gloves.\"'}
+            </PullQuote>
+          </section>
+
           {/* Section: Daily Routines */}
           <section className="mt-16">
             <div className="flex items-center gap-4">
@@ -204,11 +275,36 @@ export function QingyuBehavior() {
 
             {/* Morning */}
             <h3 className="mt-8 font-sans text-xs font-bold uppercase tracking-widest-custom text-graphite">
-              Morning — The Private Hours
+              Morning — The Construction of Self
             </h3>
             <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
               {'Qingyu wakes before dawn, when the harbor is quiet and the world has not yet begun its demands. These hours are sacred — the only time she is entirely unobserved. She does not perform her morning tea ceremony for an audience; she performs it for herself, and the difference is everything.'}
             </p>
+
+            <div className="mt-6 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h4 className="font-serif text-lg text-ink dark:text-ink">Skincare as Armor</h4>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-graphite">
+                {'Skincare comes first — a meticulous regimen of Liyue herbal preparations, light oils, and cold water. She learned skin care not from any mother figure but from observation, watching the wealthy women of the harbor and reverse-engineering their luminosity. Her skin at forty-four is a testament to decades of disciplined maintenance, and she is not above a flicker of private vanity about it. The lower-class girl who once owned two sets of clothing now possesses dozens of silk robes, and if there is something compulsive in the abundance, she has never examined it closely enough to name it.'}
+              </p>
+            </div>
+
+            <div className="mt-6 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h4 className="font-serif text-lg text-ink dark:text-ink">The Jade Hairpin Placement</h4>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-graphite">
+                {'Hair follows: the platinum blonde is natural but requires careful management, and she styles it differently depending on the day\'s agenda. Up and ornamented with jade pins for formal social engagements. A softer, partially loose arrangement for intimate tea-house gatherings where she wants to project approachability. Pulled back severely for broker work, when beauty is a tool to be holstered rather than brandished. The hairpin\'s position is a signal — those who know her well can read the day\'s agenda from the angle of the jade alone.'}
+              </p>
+            </div>
+
+            <div className="mt-6 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h4 className="font-serif text-lg text-ink dark:text-ink">The Private Tea Ceremony</h4>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-graphite">
+                {'The morning tea ceremony is the single element of Qingyu\'s daily routine that is not a performance. She conducts it alone, always, in a small room containing nothing but a low table, a window facing east, and her tea implements — a set of celadon cups and a clay pot she has owned for over fifteen years, the most sentimentally valuable objects she possesses. The ceremony is unhurried. She heats the water to precise temperatures depending on the leaf. She watches the steam. She drinks in silence. For perhaps twenty minutes, she is simply present, and the tea is simply tea.'}
+              </p>
+              <p className="mt-3 font-sans text-xs italic text-jade">
+                {'As of current canon, only Dmitri has received an invitation to share this private tea — and even he may not fully understand what it means.'}
+              </p>
+            </div>
+
             <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
               {'Sword practice follows — three mornings a week with a blade master, maintaining skills that her public persona conceals. The training is rigorous, practical, focused on incapacitation rather than display. She has never needed to use these skills publicly. The fact that she maintains them anyway says something about how she expects her life to end.'}
             </p>
@@ -228,8 +324,23 @@ export function QingyuBehavior() {
             <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
               {'The transition from public to private is gradual and deliberate. Qingyu does not simply remove the mask; she peels it away layer by layer, checking at each stage that she is truly unobserved. The final layer — the one she wears even when alone — comes off only in the hour before sleep, and sometimes not even then.'}
             </p>
+
+            <div className="mt-6 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h4 className="font-serif text-lg text-ink dark:text-ink">The Harbor at Night</h4>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-graphite">
+                {'Evenings are when Liyue Harbor\'s social world comes alive, and consequently when Qingyu does her most important work. Dinners, performances at the Heyu Tea House, private gatherings hosted by merchants and officials — these are the events where guards drop, wine flows, and information surfaces like oil on water. She is a sought-after guest, known for her wit and her ability to make any gathering more interesting. Hosts compete for her attendance not realizing they are competing to be surveilled.'}
+              </p>
+            </div>
+
+            <div className="mt-6 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h4 className="font-serif text-lg text-ink dark:text-ink">Network Activation</h4>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-graphite">
+                {'On nights dedicated to shadow work, the socialite vanishes entirely. Surveillance operations require patience and physical endurance that would surprise anyone who knows only the silk-draped tea-house version of Qingyu. She can hold a position for hours, motionless, watching a target\'s movements with the focused attention of a hunting cat. Document acquisition demands quick hands, quicker thinking, and an intimate knowledge of Liyue\'s architectural quirks. Clandestine meetings with high-value contacts happen in the small hours, in locations chosen for their acoustic privacy and multiple exit routes.'}
+              </p>
+            </div>
+
             <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
-              {'She sleeps poorly. Insomnia has been her companion for decades — the price of a mind that never stops analyzing, evaluating, planning. She manages it with tea, with late-night walks along the harbor, with the private garden she tends when she cannot sleep.'}
+              {'She sleeps poorly. Insomnia has been her companion for decades — the price of a mind that never stops analyzing, evaluating, planning. She manages it with tea, with late-night walks along the harbor, with the private garden she tends when she cannot sleep. Some nights, she drinks alone — osmanthus wine, always, poured into a cup that is too fine for solitary drinking, because she refuses to treat herself as less deserving of beauty simply because no one is watching.'}
             </p>
           </section>
 

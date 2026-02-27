@@ -484,6 +484,125 @@ export function DuoDynamic() {
           </p>
         </motion.section>
 
+        {/* Conflict Points */}
+        <motion.section className="mx-auto mt-24 max-w-5xl px-6 lg:px-12" {...reveal}>
+          <div className="flex items-center gap-4">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+              Conflict Points
+            </p>
+            <div className="h-px flex-1 bg-vapor" />
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="border border-vapor p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
+                The Moral Divide
+              </p>
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink">
+                {"He has lines he will not cross; she has lines she will cross and rationalize. Managed through unspoken protocol: children involved \u2014 Dmitri\u2019s morality takes absolute precedence. Operational survival at stake \u2014 Qingyu\u2019s pragmatism takes precedence. The gray space between is negotiated through gestures, silences, and the specific quality of the look Dmitri gives her when she has gone too far."}
+              </p>
+            </div>
+
+            <div className="border border-vapor p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
+                The Intimacy Impasse
+              </p>
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink">
+                {"Both constitutionally incapable of discussing feelings. He expresses care through action \u2014 perimeter walks, food, equipment maintenance. She expresses care through strategy \u2014 contract selection, danger diversion, unsolicited intelligence. Both fluent in the other\u2019s language of care. Neither acknowledges fluency."}
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Trust Asymmetry */}
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" {...reveal}>
+          <div className="flex items-center gap-4">
+            <div className="h-px w-8 bg-ink" />
+            <h2 className="font-serif text-title italic text-ink">
+              Trust Asymmetry
+            </h2>
+          </div>
+
+          <p className="mt-8 font-serif text-body leading-relaxed text-ink">
+            {"Dmitri trusts Qingyu fundamentally \u2014 not her methods, but her. He trusts her competence, her judgment, and her commitment to their partnership. Despite her profession as a spy, despite their philosophical differences, he has extended to her a degree of loyalty that surprises even him."}
+          </p>
+
+          <p className="mt-paragraph font-serif text-body leading-relaxed text-ink">
+            {"Qingyu trusts Dmitri in practice \u2014 puts her life in his hands daily \u2014 while denying trust in theory. \u201CI verify, Volkov. I don\u2019t trust.\u201D The gap between what she says and what she does is narrowing, and the narrowing frightens her more than any threat to her network."}
+          </p>
+        </motion.section>
+
+        {/* Twin Dendros */}
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" {...reveal}>
+          <div className="flex items-center gap-4">
+            <div className="h-px w-8 bg-ink" />
+            <h2 className="font-serif text-title italic text-ink">
+              Twin Dendros
+            </h2>
+          </div>
+
+          <p className="mt-8 font-serif text-body leading-relaxed text-ink">
+            {"Dmitri grows upward \u2014 toward light, openness, shelter. His Dendro manifests as protection: thorn barriers, hardened wood, defensive groves. Qingyu grows outward \u2014 toward connection, coverage, the web. Her Dendro manifests as networks: vine restraints, spore clouds, razor-silk threads."}
+          </p>
+
+          <p className="mt-paragraph font-serif text-body leading-relaxed text-ink">
+            {"Together: shelter and reach, root and branch, the tree and the vine that climbs it. His thorns grow thornier near her. Her vines grow gentler near him. Dendro responds to what they won\u2019t say."}
+          </p>
+        </motion.section>
+
+        {/* Pre-Dawn Vulnerability Dialogue */}
+        <motion.section className="mx-auto mt-24 max-w-reading px-6" aria-label="Pre-Dawn Dialogue" {...reveal}>
+          <div className="flex items-center gap-4">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+              Dialogue Sample
+            </p>
+            <div className="h-px flex-1 bg-vapor" />
+          </div>
+
+          <h3 className="mt-6 font-serif text-title italic text-ink">
+            Pre-Dawn Vulnerability
+          </h3>
+
+          <div className="mt-6 border border-vapor p-6 lg:p-8">
+            <p className="font-sans text-xs italic leading-relaxed text-graphite">
+              {"A balcony overlooking Liyue Harbor. Pre-dawn. Dmitri is standing at the railing, hands gripping the stone. He has not slept. Qingyu appears beside him without announcement \u2014 she heard him wake, or perhaps she was already awake."}
+            </p>
+
+            <div className="mt-6 h-px bg-vapor" />
+
+            <div className="mt-6 flex flex-col gap-4">
+              <div className="flex gap-4">
+                <span className="w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-jade">Qingyu</span>
+                <span className="font-serif text-sm leading-relaxed text-ink">The stars are particularly insufferable tonight. All that beauty and no audience.</span>
+              </div>
+              <div className="flex gap-4">
+                <span className="w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
+                <div>
+                  <span className="font-sans text-xs italic text-graphite">[long silence] </span>
+                  <span className="font-serif text-sm leading-relaxed text-ink">...bad dream.</span>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <span className="w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-jade">Qingyu</span>
+                <span className="font-serif text-sm leading-relaxed text-ink">I have those too. Different village. Same fire.</span>
+              </div>
+              <div className="flex gap-4">
+                <span className="w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-crimson">Dmitri</span>
+                <span className="font-serif text-sm leading-relaxed text-ink">...yours burn too?</span>
+              </div>
+              <div className="flex gap-4">
+                <span className="w-20 shrink-0 text-right font-display text-[9px] uppercase tracking-[0.15em] text-jade">Qingyu</span>
+                <span className="font-serif text-sm leading-relaxed text-ink">Every night, Volkov. Every single night.</span>
+              </div>
+            </div>
+
+            <div className="mt-6 h-px bg-vapor" />
+            <p className="mt-6 font-sans text-xs italic leading-relaxed text-graphite">
+              {"They stand closer than they were standing before \u2014 close enough that their sleeves almost touch \u2014 and they watch the harbor lighten from black to gray to the first pale gold of a Liyue dawn, and neither of them moves until the sun is fully up, and neither of them ever mentions this moment again."}
+            </p>
+          </div>
+        </motion.section>
+
         {/* End divider */}
         <div className="mx-auto mt-24 flex justify-center">
           <div className="h-px w-16 bg-vapor" />
