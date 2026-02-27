@@ -1,5 +1,3 @@
-<![CDATA[<div align="center">
-
 ![The Archives — Volkov & Qingyu](public/images/og-image.png)
 
 # The Archives — Volkov & Qingyu
@@ -71,4 +69,3 @@ public/images/               # Character portraits & OG image
 ## License
 
 This project contains original fictional characters and lore. The code is open source, but the character designs, artwork, and written lore content are © adenaufal. Please don't reuse the OC content without permission.
-]]>
