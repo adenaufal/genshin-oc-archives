@@ -34,6 +34,41 @@ export function VolkovHistory() {
           {/* Divider */}
           <div className="mt-12 hairline dark:bg-vapor/30" />
 
+          {/* Section: Origin Story */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Origin: The Post
+              </h2>
+            </div>
+
+            <p className="mt-8 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Dmitri was born in a military settlement in northern Snezhnaya called "the Post" — wooden barracks, training yard, mess hall, perimeter wall. His mother, Irina, was a civilian supply coordinator described as "water" to his father Alexei\'s "granite" — warm, gentle, the anomaly in Dmitri\'s life. She died of respiratory illness when Dmitri was three. His earliest memories are fragments: warmth, a singing voice, soft hands, the smell of cooking.'}
+            </p>
+
+            <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Three-year-old Dmitri searched the house for her for nearly a week. The lesson was immediate and permanent: people disappear. Warmth is temporary. The things you need most are the things most likely to be taken from you.'}
+            </p>
+
+            <details className="mt-8 border border-vapor dark:border-vapor/30">
+              <summary className="cursor-pointer px-5 py-4 font-display text-[10px] uppercase tracking-[0.2em] text-crimson hover:text-ink transition-colors">
+                Childhood & Military Training (Ages 6–17)
+              </summary>
+              <div className="border-t border-vapor dark:border-vapor/30 px-5 py-5 space-y-paragraph">
+                <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+                  {'Training began at six under his father. Exceptional physical aptitude was noticed by age eight. At ten, during a border skirmish, Alexei put a woodcutting axe in his hands and told him to guard the root cellar where younger children hid. He stood at that door for six hours, gripping the axe until his hands bled. His hands had to be pried from the handle.'}
+                </p>
+                <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+                  {'His "courage" was actually a freeze response — catatonic terror that happened to place him exactly where he needed to be. Everyone interpreted it as bravery. The distinction would haunt him for decades.'}
+                </p>
+                <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+                  {'Alexei died slowly over several months when Dmitri was seventeen, from injuries sustained years earlier in border defense that never properly healed. He refused medical treatment beyond basic pain management. His last words were practical instructions: "The axe needs sharpening. And fix the fence on the north side — the posts are rotting." Love expressed through maintenance. Dmitri felt nothing at the moment of death. He sharpened the axe. He fixed the fence. He arranged the burial with military efficiency.'}
+                </p>
+              </div>
+            </details>
+          </section>
+
           {/* Section: Worldview */}
           <section className="mt-16">
             <div className="flex items-center gap-4">
@@ -128,7 +163,113 @@ export function VolkovHistory() {
             </p>
 
             <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
-              {'He did not simply walk away. He took the refugees with him — thirty-seven civilians, half of them children — and he used his own body as a shield between them and the pursuing soldiers. His Vision manifested in that moment: vines erupting from frozen ground, thorn barriers rising in impossible defiance of the season, the element of growth answering a man who had finally chosen to nurture rather than destroy.'}
+              {'He did not simply walk away. He took the refugees with him — approximately two hundred civilians, half of them children — and he used his own body as a shield between them and the pursuing soldiers. His Vision manifested in that moment: vines erupting from frozen ground, thorn barriers rising in impossible defiance of the season, the element of growth answering a man who had finally chosen to nurture rather than destroy.'}
+            </p>
+          </section>
+
+          {/* The Morozov Incident */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                The Morozov Incident
+              </h2>
+            </div>
+
+            <div className="mt-8 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">
+                Field Report — Classified
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'Colonel Vasily Morozov personally assured Dmitri\'s unit that a particular mission had been cleared of civilian presence. The intelligence was wrong, or more likely, deliberately falsified to ensure the unit wouldn\'t hesitate. When Dmitri\'s squad breached the target compound, they found not enemy combatants but a makeshift hospital.'}
+              </p>
+              <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'The aftermath is something Dmitri still cannot discuss without his hands beginning to shake. After that day, he stopped listening to what people said and started watching what they did. The incident hardened his second core belief into something load-bearing and permanent.'}
+              </p>
+            </div>
+          </section>
+
+          {/* The Deserter-Hunter */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                The Deserter-Hunter
+              </h2>
+            </div>
+
+            <div className="mt-8 border-l-2 border-crimson/20 dark:border-crimson/30 pl-6">
+              <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'Snezhnaya does not forgive desertion. The first hunter found him three months after the flight south. The fight lasted eleven minutes and left a long, thin scar from Dmitri\'s right collarbone to his left hip — a diagonal line that he carries like a second signature.'}
+              </p>
+              <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'Dmitri won. The second and third hunters fared no better. When asked about the Snezhnayan military\'s position on his desertion, his response is characteristically terse: "They have sent three. None of them wished to continue the conversation."'}
+              </p>
+            </div>
+          </section>
+
+          {/* The Journey South */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                The Journey South
+              </h2>
+            </div>
+
+            <p className="mt-8 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Dmitri led the refugees south and east through Snezhnayan wilderness over several months. He used his newly manifested Dendro abilities to create windbreaks, deter predators, and coax edible roots from frozen soil. The journey was brutal, but every civilian survived.'}
+            </p>
+
+            <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'At parting, some wept. A few pressed gifts into his hands: a carved wooden token, a hand-knitted scarf, a child\'s drawing of a man with a big sword and green vines. He kept all of them. He keeps them still — carried in a leather pouch at the bottom of his pack, the only possessions he would risk his life to retrieve.'}
+            </p>
+          </section>
+
+          {/* Trauma Layers */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Trauma Architecture
+              </h2>
+            </div>
+
+            <p className="mt-8 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Dmitri\'s psychological damage is not a single wound but a geological formation — layers of trauma deposited over decades, each one compressing and transforming the ones beneath it.'}
+            </p>
+
+            <details className="mt-8 border border-vapor dark:border-vapor/30">
+              <summary className="cursor-pointer px-5 py-4 font-display text-[10px] uppercase tracking-[0.2em] text-crimson hover:text-ink transition-colors">
+                The Five Trauma Layers
+              </summary>
+              <div className="border-t border-vapor dark:border-vapor/30 px-5 py-5 space-y-4">
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Layer 1 — Ages 0–3</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">{"Mother's death. Capacity damaged: ability to form secure bonds."}</p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Layer 2 — Ages 3–15</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">{"Chronic hypervigilance in border settlement. Capacity damaged: ability to feel safe without active threat."}</p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Layer 3 — Ages 15–27</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">{"Twelve years of military service, combat exposure, and moral injury. Capacity damaged: trust in institutions and authority."}</p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Layer 4 — Ages 20–27</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">{"Betrayal trauma — the institution was both protector and source of harm. Capacity damaged: identity framework."}</p>
+                </div>
+                <div className="border border-vapor dark:border-vapor/30 p-4">
+                  <p className="font-display text-[10px] uppercase tracking-[0.2em] text-crimson">Layer 5 — Age 30</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-ink dark:text-ink">{"PTSD crisis — two months alone in a forest, dissociative episode. Capacity damaged: integration of past and present."}</p>
+                </div>
+              </div>
+            </details>
+
+            <p className="mt-6 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Sensory triggers include the smell of smoke, metal-on-metal sounds, flat winter light, children crying, and sudden physical contact from behind. Each trigger can activate a different layer, producing responses that range from heightened alertness to full dissociative episodes.'}
             </p>
           </section>
 

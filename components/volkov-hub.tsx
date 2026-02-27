@@ -76,6 +76,14 @@ export function VolkovHub() {
               {"The Iron Forest. A scarred, immovable defender built for utility over beauty, whose hypervigilance is matched only by his physical durability."}
             </p>
 
+            <p className="mt-6 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Dmitri Volkov is a paradox: a Snezhnayan soldier named for the harvest goddess, a man of war wielding the element of growth. Born into a lineage of military defenders, he spent his early adult life as a human siege engine, pointing his claymore at whatever Snezhnaya\'s military apparatus deemed worthy of breaking. That certainty snapped when the system he served demanded an unconscionable price — the abandonment of innocent civilians.'}
+            </p>
+
+            <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'In a rare act of radical mercy, Dmitri chose to protect the refugees instead of following orders, branding himself a deserter and a lone wolf driven from his pack. It was in this precise moment of rebellion that a Dendro Vision manifested: a quiet acknowledgment from the gods that the bloodied soil of a battlefield could still nurture life.'}
+            </p>
+
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               {/* Personality Sliders */}
               <div>

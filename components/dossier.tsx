@@ -31,22 +31,20 @@ export function Dossier() {
         {characters.map((char, i) => (
           <div
             key={char.name}
-            className="absolute transition-all duration-700 ease-out"
+            className="absolute inset-x-0 mx-auto sm:inset-x-auto sm:mx-0 sm:right-[3vw] lg:right-[5%] top-[5%] w-[75vw] sm:w-[50vw] lg:w-[45vw] max-w-[650px] h-[60vh] sm:h-[70vh] lg:h-[75vh] max-h-[850px] transition-all duration-700 ease-out"
             style={{
-              opacity: hoveredIndex === i ? 0.2 : 0,
-              transform: hoveredIndex === i ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.95)',
-              top: '50%',
-              right: 'clamp(0%, 5vw, 10%)',
-              width: 'clamp(250px, 40vw, 600px)',
-              height: 'clamp(350px, 70vh, 800px)',
+              opacity: hoveredIndex === i ? 0.35 : 0,
+              transform: hoveredIndex === i ? 'scale(1)' : 'scale(0.92)',
+              maskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)',
             }}
           >
             <Image
               src={char.image}
               alt=""
               fill
-              className="object-contain object-center"
-              sizes="(max-width: 640px) 60vw, (max-width: 1024px) 50vw, 600px"
+              className="object-contain object-bottom"
+              sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 650px"
               priority={i === 0}
               aria-hidden="true"
             />

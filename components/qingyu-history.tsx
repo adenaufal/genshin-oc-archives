@@ -142,6 +142,86 @@ export function QingyuHistory() {
             </p>
           </section>
 
+          {/* Core Beliefs */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-jade" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Core Beliefs
+              </h2>
+            </div>
+
+            <h3 className="mt-8 font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">
+              Core Belief 1
+            </h3>
+            <PullQuote accent="jade">
+              {'"Information is the only true currency."'}
+            </PullQuote>
+            <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'At age eight, she noticed the fishmonger\'s wife visited a particular tea house every third afternoon, and the fishmonger grew generous when someone mentioned his wife\'s name with a knowing smile. First lesson in leverage. After her father\'s death at ten, she traded whispers for favors, scraps of intelligence for slightly larger kindnesses. The pattern was set.'}
+            </p>
+
+            <h3 className="mt-12 font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">
+              Core Belief 2
+            </h3>
+            <PullQuote accent="jade">
+              {'"Everyone has a price. The truly interesting question is what currency they accept."'}
+            </PullQuote>
+            <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'At thirteen, working as a household servant for the Jin merchant family, she watched the patriarch accept a Snezhnayan bribe for a twelve percent markup on jade. The matriarch stole from household accounts for gambling. The eldest son paid a courtesan for silence. Everyone had a price. The only variable was the denomination.'}
+            </p>
+
+            <h3 className="mt-12 font-sans text-xs font-bold uppercase tracking-widest-custom text-jade">
+              Core Belief 3
+            </h3>
+            <PullQuote accent="jade">
+              {'"Sentiment is a luxury, but one worth affording occasionally."'}
+            </PullQuote>
+            <p className="font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'A pattern of "irrational generosity" contradicts her transactional worldview: forgiving debts, warning informants of danger, taking financial losses to protect loyal people. She quietly patronizes a school for dock workers\' children. She maintains what she privately calls a "sentiment budget" — an unspoken allocation of resources for things that serve no strategic purpose, including her growing attachment to Dmitri.'}
+            </p>
+          </section>
+
+          {/* Specific Anecdotes */}
+          <section className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-jade" />
+              <h2 className="font-serif text-title italic text-ink dark:text-ink">
+                Field Notes
+              </h2>
+            </div>
+
+            <div className="mt-8 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
+                The Millelith Captain
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'When a Millelith captain investigated her safe house, she spent three weeks studying him. His price was not Mora but his daughter\'s admission to the Liyue Academy. She arranged a tutor. The investigation was quietly redirected. No threats were made. No laws were technically broken. The captain\'s daughter graduated with honors.'}
+              </p>
+            </div>
+
+            <div className="mt-6 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
+                The Father&apos;s Funeral
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'She was ten. Her mother couldn\'t afford proper rites. Neighbors — dock workers and seamstresses — pooled resources for a proper burial. No strategic value. She felt two things simultaneously: fierce gratitude, and a cold voice whispering "Remember who helped. Remember who didn\'t." The duality has never resolved.'}
+              </p>
+            </div>
+
+            <div className="mt-6 border border-vapor dark:border-vapor/30 p-6">
+              <p className="font-display text-[10px] uppercase tracking-[0.2em] text-jade">
+                The Fishmonger&apos;s Wife
+              </p>
+              <div className="mt-4 h-px bg-vapor dark:bg-vapor/30" />
+              <p className="mt-4 font-serif text-body leading-relaxed text-ink dark:text-ink">
+                {'Her first piece of leverage, at age eight. The fishmonger\'s wife visited a particular tea house every third afternoon. The fishmonger grew generous when someone mentioned his wife\'s name with a knowing smile. A child\'s observation, weaponized before she understood the word. The pattern would define her life.'}
+              </p>
+            </div>
+          </section>
+
           {/* Section: Key Relationships */}
           <section className="mt-16">
             <div className="flex items-center gap-4">
@@ -181,6 +261,28 @@ export function QingyuHistory() {
               </p>
               <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
                 {'Dmitri represents a disruption to Qingyu\'s carefully maintained system. His refusal to be charmed, manipulated, or strategically managed means that her upper layers — designed for exactly those purposes — have no purchase on him. In his presence, the masks do not fail; they simply become unnecessary. The absence of their purpose is the most disorienting experience of her adult life.'}
+              </p>
+            </div>
+
+            {/* Songwei */}
+            <div className="mt-8 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h3 className="font-serif text-xl text-ink dark:text-ink">Songwei</h3>
+              <p className="mt-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                Primary Informant
+              </p>
+              <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
+                {'A nervous but reliable intelligence source who monitors harbor shipping and Millelith patrol patterns. Qingyu manages him with a precise mixture of intimidation and protection — he fears her enough to be punctual and trusts her enough to be honest. She has saved his life twice, a fact she files under "operational investment" rather than "care."'}
+              </p>
+            </div>
+
+            {/* Magistrate Chen */}
+            <div className="mt-8 border-l-2 border-jade/20 dark:border-jade/30 pl-6">
+              <h3 className="font-serif text-xl text-ink dark:text-ink">Magistrate Chen</h3>
+              <p className="mt-2 font-display text-[10px] uppercase tracking-[0.2em] text-graphite">
+                Rival Broker
+              </p>
+              <p className="mt-4 font-serif text-body leading-relaxed text-graphite">
+                {'A careful man with a son at the Academy and an estate financed by questionable collateral. He has attempted to expose her network twice. Both times, she responded not with threats but with information — sharing just enough about his own vulnerabilities to make the cost of confrontation clear. They maintain a wary détente that both understand is temporary.'}
               </p>
             </div>
           </section>

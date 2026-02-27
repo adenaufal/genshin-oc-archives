@@ -78,6 +78,14 @@ export function QingyuHub() {
               {"The Mist Serpent. Graceful, elusive, and meticulously curated. A woman whose attire and accessories function as communicative misdirections."}
             </p>
 
+            <p className="mt-6 font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'The name "Lan Qingyu" is an exquisite fabrication, a title chosen by a dock worker\'s hungry daughter to rewrite her own destiny. Where others inherited wealth and respect, she had to engineer them entirely from scratch. Trading the cold reality of absolute poverty for the silken armor of high society, she transformed herself into the harbor\'s most indispensable intelligence broker — a woman whose smile is a weapon and whose information network rivals the Qixing\'s own.'}
+            </p>
+
+            <p className="mt-paragraph font-serif text-body leading-relaxed text-ink dark:text-ink">
+              {'Yet creating an empire of leverage is an isolating endeavor. Surrounded by people who owe her, fear her, or find her useful, Qingyu remains fundamentally untouched and unseen. As the weight of thirty years of deception begins to strain her flawless architecture, the terrifying truth emerges: the girl who survived by becoming everyone else\'s necessity is finally longing to be someone\'s choice.'}
+            </p>
+
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <h3 className="font-display text-[10px] font-medium uppercase tracking-[0.2em] text-graphite">
