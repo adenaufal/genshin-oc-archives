@@ -112,8 +112,8 @@ export function VolkovBehavior() {
             </p>
 
             {/* Tells table */}
-            <div className="mt-8 overflow-hidden border border-vapor dark:border-vapor/30">
-              <table className="w-full text-left">
+            <div className="mt-8 overflow-x-auto border border-vapor dark:border-vapor/30">
+              <table className="w-full min-w-[600px] text-left">
                 <thead>
                   <tr className="border-b border-vapor dark:border-vapor/30 bg-canvas dark:bg-canvas-secondary">
                     <th className="px-5 py-3 font-sans text-[11px] font-bold uppercase tracking-widest-custom text-graphite">

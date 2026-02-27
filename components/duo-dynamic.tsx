@@ -195,7 +195,7 @@ export function DuoDynamic() {
 
           {/* Desktop table */}
           <div className="mt-10 hidden overflow-hidden border border-vapor md:block">
-            <table className="w-full text-left">
+            <table className="w-full min-w-[600px] text-left">
               <thead>
                 <tr className="border-b border-vapor bg-canvas">
                   <th className="w-1/4 px-5 py-4 font-sans text-[11px] font-bold uppercase tracking-widest-custom text-graphite">
@@ -352,8 +352,8 @@ export function DuoDynamic() {
           </p>
 
           {/* Combat roles table */}
-          <div className="mt-10 overflow-hidden border border-vapor">
-            <table className="w-full text-left">
+          <div className="mt-10 overflow-x-auto border border-vapor">
+            <table className="w-full min-w-[600px] text-left">
               <thead>
                 <tr className="border-b border-vapor">
                   <th className="px-5 py-3 font-sans text-[11px] font-bold uppercase tracking-widest-custom text-graphite">

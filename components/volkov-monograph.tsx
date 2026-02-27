@@ -141,8 +141,8 @@ export function VolkovMonograph() {
               {'The tripartite name structure encapsulates Dmitri\'s central tension: he is simultaneously a force of destruction and a force of growth. The name reads like a thesis statement for a life defined by paradox.'}
             </p>
 
-            <div className="mt-8 overflow-hidden border border-vapor dark:border-vapor/30">
-              <table className="w-full text-left">
+            <div className="mt-8 overflow-x-auto border border-vapor dark:border-vapor/30">
+              <table className="w-full min-w-[600px] text-left">
                 <thead>
                   <tr className="border-b border-vapor dark:border-vapor/30 bg-canvas dark:bg-canvas-secondary">
                     <th className="px-5 py-3 font-sans text-[11px] font-bold uppercase tracking-widest-custom text-graphite">
@@ -225,8 +225,8 @@ export function VolkovMonograph() {
               {'Each scar represents a moment where Dmitri\'s body absorbed damage that might have killed someone less durable. He does not display them proudly, nor does he hide them with shame. They simply are.'}
             </p>
 
-            <div className="mt-8 overflow-hidden border border-vapor dark:border-vapor/30">
-              <table className="w-full text-left">
+            <div className="mt-8 overflow-x-auto border border-vapor dark:border-vapor/30">
+              <table className="w-full min-w-[600px] text-left">
                 <thead>
                   <tr className="border-b border-vapor dark:border-vapor/30 bg-canvas dark:bg-canvas-secondary">
                     <th className="px-5 py-3 font-sans text-[11px] font-bold uppercase tracking-widest-custom text-graphite">
